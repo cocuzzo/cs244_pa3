@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components:components xmlns:components="http://www.noxrepo.org/components.xsd">
+  <component>
+    <name>lbtest</name>
+    <dependency>
+      <name>python</name>
+    </dependency>
+    <python>nox.loadbalancer.lbtest.lbtest</python>
+  </component>
+</components:components>

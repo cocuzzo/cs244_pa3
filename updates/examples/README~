@@ -1,0 +1,3 @@
+To run load_balancer, install patches to core.py, util.py from top-level dir
+
+To run multicast, install networkx 1.6

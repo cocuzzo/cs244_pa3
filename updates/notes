@@ -1,0 +1,49 @@
+21 Dec
+
+Google is mostly worried about space used by mechanism, and probably about the issue of chasing your own tail
+
+space constrained two-phase commit
+two concerns: responsivity and rule overhead on the switches
+
+Maybe two models: 1) controller bottleneck, so # of commands
+2) switch bottlenecks, so installing 10 rules on 1 switch is worse than 1 rule on 10 switches
+
+Multicast
+Mac-learning
+NAT
+
+implement Nate's desired changes to NXtopo
+
+26 Dec
+
+Nate to keep working on examples
+
+Nate/Dave to write up cleaned up NSDI Header Analysis stuff
+
+Jen to work out common configuration changes, come up with example for Cole that involves packet rewriting
+
+Evaluation? 
+	    - No wall clock
+
+For me: Canonical infrastructure for push-button example and stats tabulation
+Try to do per-flow
+    - Implementation strat: on ingress switches, for ingress rules, use time-outs then do refinement
+
+31 Dec
+ What do we keep from Dave's model, and how do we reconcile it with Cole's model
+
+ Questions for Dave:
+   Head space papaer actually did talk about switches, it was just inconsistent. For future work, what if we just model the whole thing as a bunch of ports connected together
+
+   Why not do a regular LTS instead of passing the traces (augmented packets) around?
+
+   - Because this allows us to precisely record the trajectory of a single packet through the network
+   Wonder if t should be symmetric, except for world/drop and if the links are bidirectional:
+   "Definition: External port: 
+   		a port p is an external port if it is not WORLD or DROP and t(p) = WORLD.
+		External(p,t) is valid if p is an external port.
+
+    Definition: Internal port: 
+    		a port p is an internal port if it is not WORLD or DROP and t(p) not= WORLD
+		Internal(p,t) is valid if p is an external port.
+    "

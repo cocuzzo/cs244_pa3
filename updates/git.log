@@ -1,0 +1,2483 @@
+commit 77182a7eb81ca169e526b73647bb51b4ab04f039
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jun 22 10:14:05 2012 -0400
+
+    Deleted old makefile
+
+commit ac121c8c63e19b10cba62ac209e29255e4292fd3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jun 21 10:13:00 2012 -0400
+
+    Changed sigcomm to use extracted equalities instead of manual. Updated perpacket proof to match.
+
+commit a0860ca7fd7503c361888d2fcb6da21466b1254f
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jun 20 17:20:29 2012 -0400
+
+    Added multicast topo links to repo
+
+commit 070a92a6d890f9c235c12391216263db214c9bcd
+Author: Alec Story <avs38@cornell.edu>
+Date:   Fri Jun 15 14:23:42 2012 -0400
+
+    Python module structure in updates and slices
+
+commit 3cba159b3eaea196958249ec9485e1d819baa0a3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jun 13 08:50:49 2012 -0400
+
+    Removed old files from old subset update
+
+commit 898ab5e8ba5f9450e3bfe3d8a23330c53d76dff1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jun 6 10:52:41 2012 -0400
+
+    Minor changes to facilitate benchmarking
+
+commit 91b049a0b931a84cfb55b4d1a561075a5f20494e
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jun 1 17:13:39 2012 -0400
+
+    Changed spanning_tree computation to work on multiple multicast groups
+
+commit 7d24f70c9f3012c9260f3b77c2c45da0754f766a
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jun 1 17:13:15 2012 -0400
+
+    Changed multicast examples to use multiple multicast groups
+
+commit ee46cc1d09ad4b709372b5fdf87d6827210a9da4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jun 1 16:28:46 2012 -0400
+
+    Changed dynamic hosts scenario to be more realistic, raise overhead
+
+commit 209c49568d24f0b6ada43315553de8828061ad77
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jun 1 16:27:55 2012 -0400
+
+    Added pattern_intersection test to unit tests
+
+commit 539c3b902cd18374eb0c7365126ac7e14c9ad3e8
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 30 16:50:51 2012 -0400
+
+    drop more dead code from old island code
+
+commit 0ee9d052cde5202bd40a8e9d4118e90a28cd8253
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 30 16:37:09 2012 -0400
+
+    drop some dead code from old island code
+
+commit 370936124f40b6531be09b50e1e526098c15240d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 30 15:59:11 2012 -0400
+
+    Added new implementation of island_update. Still slow as heck, but less slow than previous one
+
+commit 6626b8bb29366a1a125aa774c530766c36d46226
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 29 14:43:36 2012 -0400
+
+    Added extra output for experiments
+
+commit f00a31f6803ce968458a76a65d076a9545876faa
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri May 25 12:04:01 2012 -0400
+
+    Minor fixes to avoid degenerate cases in Island. Still not convinced it's 100%, and it's way too slow to run on decent size examples
+
+commit 89f970d454b810779a641099de4ebafee48bbdca
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri May 25 12:02:41 2012 -0400
+
+    Add multicast examples back to Makefile
+
+commit 4e849c79b6831405cf9ec597cd7c2919b4de4bc4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri May 25 12:02:29 2012 -0400
+
+    Added multicast example back into repo
+
+commit c43f9189e0b0e0f6824fb8b730bc2c0269539371
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri May 25 11:50:14 2012 -0400
+
+    Added multicast policy back in
+
+commit 1263f723d600a502780883f4f55020b67a0121dc
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu May 24 12:45:36 2012 -0400
+
+    Island seems to be working, though it degenerates to full update in each of our examples. Fixing this shortly
+
+commit 00706746f1c229b02d0bfb571f3e6eb951c749c5
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 23 17:01:57 2012 -0400
+
+    Changed experiments to show affect of extension/retraction clearly
+
+commit 252108b8face4fcf298d1e55dacc34916bacbabb
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 23 16:59:59 2012 -0400
+
+    Split extension_update into extension and retraction update. The exact correctness condition for doing both simultaneously isn't clear to me, but the correctness of this is
+
+commit 46b145ff4a2b77d7f2b2775609f0fe4149b083ae
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 23 15:44:37 2012 -0400
+
+    Introduced dumb typo that made extensions never apply.
+
+commit eb94787cc2f02b52c9a6fd76454af703fb6732a2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 23 15:13:34 2012 -0400
+
+    change lists -> sets for efficient intersection check in extension update
+
+commit 826370f364e26df429dc1212e88462bb223f6c89
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 23 14:36:05 2012 -0400
+
+    Optimize extension update similar to subspace to match assumptions in example
+
+commit 7b56d666498aa0fabd3617ad2a269fda9e932fb4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed May 23 13:56:09 2012 -0400
+
+    Changed waxman topo to take switch num args, fixed set of hosts per switch
+
+commit 00c931358fae443c1934d23530657cde9337250e
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 22 22:48:36 2012 -0400
+
+    Changed routing to compute shortest paths on switch subgraph instead of full switch + host graph
+
+commit c0f7ae1ffa062b581e8696f80d8c7aad09fe999b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 22 22:47:38 2012 -0400
+
+    Fixed bug in fattree_topo. Hardcoded 101 as the first switch, breaks once we have more than 100 hosts...
+
+commit 26bd95e564ff27c59cdc600000e5545b7e30656b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 22 18:10:39 2012 -0400
+
+    update fattree per-flow code to match new uniform args
+
+commit 3b3aaa990032b8ebc1cbe745c84e01c946092dd7
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon May 21 18:02:25 2012 -0400
+
+    Replacing the covered() computation by a simple rule membership check (const time) = HUGE peformance win.
+
+commit a8ebd75d1d6372b1cb6b72a3e6b404e942145826
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon May 21 17:45:49 2012 -0400
+
+    Minor optimizations that trim ~30% from pattern comparison. Just changing the order of fields to compare is a nice win.
+
+commit 4356674661e5346b860dc19a2af49aa90b9c63b0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon May 21 16:55:15 2012 -0400
+
+    Some minor tweaking to smallworld topology
+
+commit ac0b165a698e6291bb9aed38001c3b2b4e504f69
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon May 21 15:59:15 2012 -0400
+
+    Changed smallworld experiment to match new format
+
+commit 1e77e0ab3a0aeb91fe4e7873f8b201b5aece6bce
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon May 21 15:49:56 2012 -0400
+
+    Moved run.py to top updates dir
+
+commit 03f12e32c40ad42bd336b9471058c03664573b06
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon May 21 15:49:31 2012 -0400
+
+    Changed fattree example to selectively reroute paths instead of just wholesale knocking out node
+
+commit 99082faf721ab0cd75d44ce1c6601c56f985ddd5
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 8 17:30:40 2012 -0400
+
+    dropped yappi code in fattree
+
+commit fb14bf1d543885658e3c70cecc904db4c10f6d91
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 8 16:41:31 2012 -0400
+
+    Changed interface to examples
+
+commit d4bc592f19183b560a340dcbb8bd6715c45b0c96
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 8 16:35:17 2012 -0400
+
+    Added fattree example back into repo
+
+commit a597f9339c24ff2bad044d852e7ece1663f4ed92
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 8 09:19:17 2012 -0400
+
+    Moved silly lambda out of inner loop, massive performance win
+
+commit eef789a29f96bd3bff93ccf021a98dbdf2397d79
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun May 6 17:50:43 2012 -0400
+
+    Stupid type bug in subspace. Equality checking on empty list instead of checking for emptiness...
+
+commit 854d5b860aa3f654dd0529690e62025053da8f1e
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun May 6 17:18:51 2012 -0400
+
+    Added more intelligent switch removal alg for smallworld
+
+commit d03be366c26b6bf9c9a45649727ade51d7412a34
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun May 6 16:11:47 2012 -0400
+
+    add typecheck to policy equality test
+
+commit 97d02c0baa44f6f1609bd679a2f57349ad082f88
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun May 6 16:08:33 2012 -0400
+
+    Got logic of policyBool test backwards
+
+commit 947d751d5e4e98f0b3a38ddcce87db35954b5656
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun May 6 16:05:38 2012 -0400
+
+    Fixed bug in config equality test
+
+commit be0f8b0e3f7ae046442bba31059909cf84139e5b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat May 5 15:55:41 2012 -0400
+
+    Added sum, subtraction tests for config, sum tests for policies
+
+commit 2602d24c3f6846a8ebdb9966d8f9b762eac7d289
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat May 5 15:50:49 2012 -0400
+
+    Dropped old subspace fixpoint code
+
+commit d0e07116365be1cbc0ee98ca1fc3cde3e881e6b8
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri May 4 14:56:34 2012 -0400
+
+    Added eq() method to policy, basic policy tests
+
+commit 97d184948fd44467a1c540fdfd9c8ec202486634
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri May 4 14:31:30 2012 -0400
+
+    Finished new fixpoint subspace update algorithm. Seems to be working, not tested for correctness yet
+
+commit 661edece0b70ea6358d0368e9527c3c8488cb6bf
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue May 1 12:25:35 2012 -0400
+
+    Added new fixpoint definition of subspace update. Much simpler, untested
+
+commit f579c4f4667a44d8db92caef492a73d8101cc70b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 30 12:10:57 2012 -0400
+
+    Fixed bug from changing function arguments that was masked by previous bug, in new subspace
+
+commit 0712c6f9e14b1347660f27074b54fff7f14b2b68
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 30 11:54:52 2012 -0400
+
+    Fixed subtle bug where I used the wrong membership call on configurations. Led to way overapproximation of update size... More unit tests needed! And a goddamned type system
+
+commit 81bc19b41fe20dac14734cfdf2a13e9b2c84ae89
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 15:17:29 2012 -0400
+
+    Removed 'count' flag turning off counting for initial installs
+
+commit e3b3d9ea12bd935a4734ef0f4af4e407d368a075
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 15:11:18 2012 -0400
+
+    brought per_flow to match current args. untested
+
+commit 92bdbac273832dbbfa3dab320266e257ddf68ee7
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 15:07:24 2012 -0400
+
+    removed spurious import
+
+commit 19e9a919a3bb35bf8aaf5832d4cf9650153bffa0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 14:58:06 2012 -0400
+
+    defaultdict to reduce logic complexity, again
+
+commit 7dcffea4ac1936458dea95326969e5bd61baea3c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 14:53:57 2012 -0400
+
+    defaultdict to reduce logic complexity
+
+commit 9d0e6df5334e09f80d0494e8d704e06ad0971791
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 14:49:51 2012 -0400
+
+    Fixed typo introduced in last commit
+
+commit 9d254fe7eab142af407e7dacc01203ef367ef099
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 14:47:51 2012 -0400
+
+    logic simplification
+
+commit 8136dc5d9055476858ae59ae40996c58de2af5c4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 14:45:52 2012 -0400
+
+    Removed dead code
+
+commit 01c601727abf44300647ca479df9ea9d409c2303
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 14:39:02 2012 -0400
+
+    for loop -> list comprehension
+
+commit 72d00600c473bac2ebdd288652521822fe271d90
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 14:23:49 2012 -0400
+
+    Add doc strings, convert map to comprehension
+
+commit 1f354ea191c9771451cb38d08fe03ff3b0dfa478
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 14:10:25 2012 -0400
+
+    verify_non_reachability -> is_not_reachable and swap arg order to match name
+
+commit 2874b29c5941966b655492530080b5b517587a5b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Apr 18 11:20:03 2012 -0400
+
+    Moved update mechanisms to use uniform update object that is then passed to two_phase_commit. Cleaner control flow and allows for unit tests, coming soon
+
+commit 2e03bd942da1aac11df51cf9dc105e55d3a38dd3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 09:11:32 2012 -0400
+
+    Added more docstrings to opts
+
+commit 9040db679b30b0c927b28a62d152c94ca8338e33
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 09:08:27 2012 -0400
+
+    Remove unusued subroutines from partial update
+
+commit a756ccfc3c3ed9261f9556aef399018b83641a83
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 09:06:52 2012 -0400
+
+    Removed old partial update function
+
+commit f275c70c568ecfbfbdf5585f8a38ee9d520d92c6
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 09:05:10 2012 -0400
+
+    comments -> pydoc
+
+commit 070d1bce84f7c2115255d655fafb36189f1268bf
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 09:03:59 2012 -0400
+
+    Removed dead debug prints
+
+commit 7d979933ac8b8df6b0bd97ea9599f1ac5a67ab2c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 09:03:24 2012 -0400
+
+    Moving code around to regain structure
+
+commit cf991a0b63ee2010702e3ad8ff135fc05f11913d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 00:34:36 2012 -0400
+
+    Moved Makefile to use dedicated routing examples
+
+commit 08adc3fe72e67a1216cfb14dfc8c904b54329fb8
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 00:32:08 2012 -0400
+
+    Brought waxman up to date
+
+commit fe0aed55482f010ae6fce1f9571ce5605043a169
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 00:30:57 2012 -0400
+
+    Brought smallworld up to date
+
+commit a43cc65fcacbfcbff8c8a32f675b19504839c7f3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 00:23:10 2012 -0400
+
+    Removed more old examples
+
+commit adcf6ff5250f6beaa814ba43b51dcc926a05bd92
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 00:20:11 2012 -0400
+
+    Removed old out of date routing junk
+
+commit 356ec227545e7fc004253c06c3d84201759f9adb
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 00:12:58 2012 -0400
+
+    Added Topology member to topo modules to play nice w/ update_app defaults
+
+commit ebcb7595675895f5b289bca41442b7c08d5d859c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Apr 17 00:03:15 2012 -0400
+
+    Brought hub.py up-to-date
+
+commit b318ba070c225099ee7dbe518b137c8ca641be77
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 23:55:59 2012 -0400
+
+    Purge super old example code left in repo
+
+commit 85343a77e3e1926d6e6e44e6eac2b8662d6340ee
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 23:52:13 2012 -0400
+
+    Added copyright notice to Makefile
+
+commit a5c051134e26fafba12ff047c8915a06233ebda2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 23:40:27 2012 -0400
+
+    Removed superflous suite() code from unittest_policy
+
+commit b46eb50dfea6b51607f344fc7e14b1dbd9ce2d00
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 23:21:43 2012 -0400
+
+    Added more instructions to README
+
+commit 457ba8211998afd0c56a082b4777e455b1b362b4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 23:21:17 2012 -0400
+
+    Moved README back
+
+commit aae0eef6a066c1e78d1fa8dc22e64e67f7f73fe6
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 23:16:42 2012 -0400
+
+    Moved makefile into examples
+
+commit 1d6efeaaa015bf62bcb41ee115d597a58832e63a
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 23:15:59 2012 -0400
+
+    Moved run.py into examples dir
+
+commit a74bc5432b5be6f433828bb1412119cdced4c322
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 23:05:10 2012 -0400
+
+    More basic tests for Action, Rule
+
+commit 26649df0c87434a1d3d2bdecdddabbcea1104691
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 22:21:47 2012 -0400
+
+    Added first unit tests for pattern objects
+
+commit 784603052c3953085d94b01664ee51d103b7d4b2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 13:15:42 2012 -0400
+
+    Minor formatting
+
+commit 11b58068ac4dce9dbaea5089c430088fa8e34f2d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 13:14:56 2012 -0400
+
+    Minor formatting
+
+commit 06027e57407dbe7ce38cbc40271019eb33c09602
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 13:13:39 2012 -0400
+
+    replace maps w/ comprehensions
+
+commit bdca5c88d2365589fa242bbde566a8510567de2f
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 13:09:55 2012 -0400
+
+    more line breaking in policy
+
+commit 3053bcbd656d06cc8b138fed1da45ff61e8bf3df
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 13:08:15 2012 -0400
+
+    line breaking in policy
+
+commit 04934229aec60f64c8c113a34bba8f67f85b8108
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 13:02:59 2012 -0400
+
+    Minor comment editing
+
+commit 75f721481d29c53e618c29a17bf9dbee289d1298
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 13:00:59 2012 -0400
+
+    More pydoc-ification
+
+commit 72ccf1b1c0ba183ab4a7cf7ec6023ad0372e858d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 11:22:47 2012 -0400
+
+    Replace * imports with specific imports
+
+commit 9164dedf54a3e127b454bd1cae28009cb6664a27
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 11:16:55 2012 -0400
+
+    Fix another per_flow typo. This code has rotted since SIGCOMM...
+
+commit bc276484688d979e680ae21addf7a3ecb551bc74
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 11:13:36 2012 -0400
+
+    Fix flow_priority typo. Worrisome this didn't show up: I need to test the per-flow stuff
+
+commit e15fb918f609a15da7468b09b30507b329c42e8d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 11:09:26 2012 -0400
+
+    stupid == instead of = typo
+
+commit 2af4536a3c32d44ace506a5736cdc3d3c855ae38
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 11:07:52 2012 -0400
+
+    Removed leftover max_rules stat
+
+commit 211b775d6fd02abb7eb93a03cb089dfef13c6306
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 11:06:30 2012 -0400
+
+    Added spaces after commas
+
+commit 2fff234cee7491fb6bf91c5eb17caf7b8b070cbb
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 10:57:28 2012 -0400
+
+    More line breaking
+
+commit d5716fb14d9eac681d6fa5cf3130f66b702f0720
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 10:48:59 2012 -0400
+
+    Fixed tabs instead of spaces
+
+commit 0f969d7024369fc13b35e0dc649c98a90ce534ff
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 10:44:46 2012 -0400
+
+    More commenting, line lengths
+
+commit cdd46e4a09261bbaa88c3a52d503b2f39863db80
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 10:41:21 2012 -0400
+
+    Fix bad line breaks in conditionals
+
+commit 6873ed1be17410259296beb010a41c5fd7b08efc
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 10:37:11 2012 -0400
+
+    Breaking line lengths
+
+commit 8b424d9129df076442ba1b76e1f2fb0e202e4c96
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 10:27:05 2012 -0400
+
+    Breaking line lengths
+
+commit f7be0b40049c37843f4d9ae23f1553da369d302f
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 10:11:04 2012 -0400
+
+    More comment moves, removed spurious global decls
+
+commit 42e43a533d3396566d6f1e97718079599c84b7f1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 16 09:43:17 2012 -0400
+
+    Moved comments into pydoc strings in update_lib
+
+commit e0789ccaacb08eba540ab2469bf470e2ce373e4d
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Fri Apr 6 08:27:17 2012 -0700
+
+    Set default values for the last two arguments to main(), so invoking './run.py routing' will just work.
+
+commit 4ba0d43de9dd33c183e4c270f7491ec956b92a25
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Fri Apr 6 08:26:38 2012 -0700
+
+    Remove an unused reference to yappi.
+
+commit 43c8fa92a23bb9a7e2d159f71113fa68cdace13f
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 16:50:30 2012 -0400
+
+    Fixed some long lines, added some pydoc strings
+
+commit ca01389dbc8f84c103f13de177193a1c8b8e5b7e
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 16:43:29 2012 -0400
+
+    Fixed more line lengths
+
+commit b1123990c90150046fade87394f839c12600df0c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 16:07:15 2012 -0400
+
+    Fixed some long lines
+
+commit d5536367af378d2a00bd269596c779ecb62ca34c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 15:56:42 2012 -0400
+
+    Cleaned out dead code from pattern.__init__()
+
+commit 2bdf7c67a01fd31359213f03ddf5c73aece65d5f
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 15:52:34 2012 -0400
+
+    Cleaned out dead code from pattern.__init__()
+
+commit 88b1882cc9146ecff1da2ecca9a9c359fb9c054c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 15:51:36 2012 -0400
+
+    Renamed pattern_lengths in policy.py to match python naming convention
+
+commit 1ead11c0ad08ef3c7b8e4f67621d5d007db1dbff
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 15:50:30 2012 -0400
+
+    Renamed pattern_lengths in policy.py to match python naming convention
+
+commit c8d6db3329eea212366c861701f0c95d04dec95c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 15:38:18 2012 -0400
+
+    More doc strings
+
+commit da911d961583a2635586ab7aa5d432401af94847
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 15:02:19 2012 -0400
+
+    Pulled dead code from Rule() class
+
+commit ae188d19cbfab8b2b5fbdc177a8117eec2a24edc
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 14:57:02 2012 -0400
+
+    More doc strings
+
+commit 29180f301079012694a1ab267cf7e25014b64891
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 14:41:23 2012 -0400
+
+    Added docs strings through to Pattern, killed some dead code
+
+commit 2cafd0527eb0928b83c7ca889403c5d4e50fb248
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Apr 2 14:10:00 2012 -0400
+
+    Fixed spaces -> tabs
+
+commit b369044aa5c414046b50c99aedbe863ff03f5771
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Mar 31 14:43:18 2012 -0400
+
+    Refactoring for spacing/line length
+
+commit 1bb8cdfb8598faccd069d39f302c2fcee62a56cc
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Mar 31 14:38:24 2012 -0400
+
+    Refactoring for spacing/line length
+
+commit 3a15d729e1f91b17bab01c10de57fbf790825450
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 27 22:11:55 2012 -0500
+
+    versions of examples used to generate numbers in TR
+
+commit 70c1acebd5b0acd43bd9759432d1d58be581bdaa
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 27 13:53:08 2012 -0500
+
+    Change need to make experiment_base work w/ none fat tree topology. Was assuming we had core and edge switches to look at
+
+commit 655c6305aa6be907ce1958b748febe3347c7ee91
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 27 13:44:31 2012 -0500
+
+    Examples as run for the perf numbers
+
+commit a4efd5b51571cea60e861792bb0913a6553ab30a
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 27 13:43:14 2012 -0500
+
+    Updated Makefile to match new interface to run
+
+commit 1e6bd103d7c6cf3bcb4075b4b1b1beff433d0ff1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 27 13:42:59 2012 -0500
+
+    Change made to run.py to support experiments
+
+commit 826754737cdd2a2f224bffd4077f9cc40d91f9c8
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 27 13:41:44 2012 -0500
+
+    silly typo left over that showed up when running experiments for perf numbers. A type system would have caught this...
+
+commit 9c7e45732e2e7c42fda153399f850c2e785c8882
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 17:47:20 2012 -0500
+
+    Small world, waxman and fattree examples. No fat tree routing yet...
+
+commit 1f587f947465116f44bec47e227d372af20930aa
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 17:26:07 2012 -0500
+
+    Clean up in waxman_topo
+
+commit 588a90158aeea4c1c32585f78baed255b52db39b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 17:25:36 2012 -0500
+
+    Fixed bug in false branch of covers(). Was returning False instead of []. Also added flags to control island/subspace update in per_packet. These flags are getting gross...
+
+commit 534d221e1536fb2a52f9f1792d81cd0fe5cf7c22
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 14:00:02 2012 -0500
+
+    island fixpoint seems to be working on non-trivial example. Caught some subtleties when a switch is both a 'real' edge switch and an 'island' edge switch. Had to hack up mk_versioned_policies to account. Need to run through there and clean up once we're done
+
+commit 147087a569a24a3ee812c96aed86e353300ee729
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 12:39:37 2012 -0500
+
+    island fixpoint updates seem to be running in the degenerate (full update) case
+
+commit 9e1e3e5bc697c7b678b966f7a9fa78107ac29934
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 12:29:36 2012 -0500
+
+    NetworkX has a bug in Graph.subgraph() that makes it tricky for us. Copy-pasta subgraph() into NXTopo with local changes around bug
+
+commit 7b2f9095fb4171f6877ef5206ee4b6f92f75ef45
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 10:30:48 2012 -0500
+
+    Fixpoint subspace seems to be working on small examples!
+
+commit 75dc9e64c34f11fe114fd1f70315ecd89fa40755
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 10:27:13 2012 -0500
+
+    Thought I had disabled the VersionedPattern crap, but apparently I hadn't
+
+commit 4c2efe119de0bb173ac1e0c20546c1f364f35a38
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 22 10:10:19 2012 -0500
+
+    fixpoint subspace seems to be running, though not correctly
+
+commit 35505597dd6afa2623c1a377b15d333a2a30be17
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 20 16:51:33 2012 -0500
+
+    First whack at island update. Not tested, severely restricted in assumptions due to use of VLAN tags. Can't mix with subspace, extension or other island updates.
+
+commit fa48e6603598808d704d9156923b3371f2ad5b3c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 20 12:49:30 2012 -0500
+
+    Now pass num_nodes argument to update_application in UpdateApp
+
+commit 01b13a4d22d43b586ae0558c15a63dd8fcd65f6e
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 20 12:47:11 2012 -0500
+
+    Clean up broken syntax
+
+commit 3988ba0aaf69b52841a268e54c5c18e04c42fe97
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 20 12:41:46 2012 -0500
+
+    syntax error in policy.py
+
+commit 790934f59b704c956e1c4f82de111211eaec2058
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 20 11:57:10 2012 -0500
+
+    First whack at implementing Nate's fixpoint subspace optimization. Untested, unrun
+
+commit 371a02a7efb06cbf9adec37b57e113d81c2fa12e
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 20:36:51 2012 -0500
+
+    rm routing_fattree*
+
+commit 6c4e81c00a035a7e1dd2b363507e8a47d4e6f7aa
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 20:35:46 2012 -0500
+
+    Rollback tricky VersionedPacket crap. Definitely heading towards cleaner code without it...
+
+commit fcaa39ab5cdbbd62faf3e9b96d01f904ac993bf0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 20:32:44 2012 -0500
+
+    Changed VersionedPattern to cache copies and the hashes
+
+commit 0ed0af878592379d9e7c6ae661f48253c6905b60
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 20:31:52 2012 -0500
+
+    minor change to cache created VersionedPatterns and the hash
+
+commit 68e0029cdf3a97414a5bb262ecd59444c11fadc2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 20:09:38 2012 -0500
+
+    Similarly for the number of nodes in the network, passed in via run.py. Feels awkward and hackish, but it's an awkward and hackish setup anyways...
+
+commit 8caca59aa3f243920a31f5ce0361cd4873960081
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 19:57:15 2012 -0500
+
+    Cleaner way of specifying topo. Need to pass it to run.py anyways, now it passes through to the update app as well.
+
+commit 8b11295c16b3ee4ef6b797899e38342083fda2aa
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 19:47:52 2012 -0500
+
+    Refactored routing so that it takes a topo argument. Next up: change all of our routing experiments to run out of routing
+
+commit 9e78f6f911fa30933ac28ce60fbc61b839eb480a
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 19:38:06 2012 -0500
+
+    Added checks to catch when the old policy referred to a switch that's been removed in the new topology. No need to keep a copy of the old topo around anymore. At any rate, the correct thing is to calculate the behavior of the configs in the current topo.
+
+commit 81bea1e9885e570a4b3b83caa22acce830c25fe5
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 19:29:23 2012 -0500
+
+    Changed up experiment_base to be more topology agnostic. Cleaned up waxman.py and waxman_topo to work. Factored out shortest_path stuff to a common file
+
+commit 4fc0e3fad5b429b9c01d1f8fee56befd71fadf81
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 17:46:47 2012 -0500
+
+    Cleaned up routing_fattree to remove old topo stuff
+
+commit 1d46ada5e60f03c92e1ac629564029f8b0c3363d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 16:34:51 2012 -0500
+
+    Ok, I feel really dirty for this commit. Python metaclass hacking to make 'fake' subclasses so that 'versioned' patterns are a different class than patterns. I noticed that adding versioning to patterns was bypassing my lovely interning scheme, so I have a new class that stores an unversioned pattern and a version and does the futzing so that it acts like a versioned pattern. Cuts memory usage dramatically
+
+commit ccb88aaabda06914003aa14ae5c62367164bafed
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Feb 19 13:55:47 2012 -0500
+
+    Changed interface to Pattern() to take a dict kwargs. Changed compute flow-space to use pattern equality instead of containment. This adds an assumption that all rules use the same 'granularity'. Think microflows. Pattern containment test is super expensive, but equality is super cheap since I'm interning patterns. Makes a huge performance difference
+
+commit 9f5db61bf90ba1e21fc7866409019996cb472feb
+Merge: 7a0c0c3 a0dc256
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 15 20:42:25 2012 -0500
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 7a0c0c320fbf578ef1e53af9d0d0fe76200479ff
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 15 20:42:16 2012 -0500
+
+    Forgot to include packet_tree
+
+commit 45a6dfe8bb62d7322bcfb1b64f8923ff1b5902fa
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 15 20:41:55 2012 -0500
+
+    Changed subspace optimization to sort traces before diffing them. Should lead to better scaling behavior
+
+commit 69b6039ca2488fe8c46fc32244c3b0c01c923314
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 15 20:30:55 2012 -0500
+
+    Changed patterns to be immutable. Turns out that we spend an incredible amount of time comparing patterns, so super cheap equality tests are good
+
+commit f9bfa473cfffcd650a6abde42b7a389aa4b2c17b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 15 10:53:09 2012 -0500
+
+    Subtle change to testing for extension updates. The reachability of the minus delta must be wrt to policy after adding in the plus delta. Really need to sit down and prove this correct once and for all
+
+commit 642e6ebf445646342072e8fb007df43f82844c6d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 13 17:47:48 2012 -0500
+
+    Swapped priority and version args to two-phase-commit at some point...
+
+commit 1a7f4e622f6fe49423c30688cb4137f7441b3c8b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 13 16:05:57 2012 -0500
+
+    Fixed logic bug in setting the new internal_policy after two-phase commit. This is where some of the wonky 'multiple copies of a rule' behavior was coming from
+
+commit 76cf46bc6a753192660b486564795d09fd747941
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 8 12:41:08 2012 -0500
+
+    Readd experimental_base_routing. Not sure why it wasn't in there...
+
+commit 52a79c2cb6ee5963808a9e183cf166a984ec57b1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 8 12:11:08 2012 -0500
+
+    Removed left-over reference to _hash in policy
+
+commit c235799b0d20c47457eb300ef6009c2f5bf47011
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Feb 7 14:18:15 2012 -0500
+
+    Bunch of optimizations pushed in. Mostly removing naive type checks and initialization. I now cache Action objects to remove __init__() costs. So don't modify them! Also tightened up the inner-loop of mk_versioned_configs to only create needed rules
+
+commit 34904b6cc0bea60519d8df7777363bf983e68556
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 6 16:57:39 2012 -0500
+
+    Removed some super naive type checks that were causing crazy amounts of allocation in big examples
+
+commit c00d224625a75025496106d29a2b82ac7df93349
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 6 15:00:20 2012 -0500
+
+    Catch NoPath exception from NX
+
+commit dadc41fb425733721bbb7570d7e460872912eeb3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 6 14:31:38 2012 -0500
+
+    Drop excessive debug prints left in by accident
+
+commit a875b9007eba7f9c2fce46ea44ee68a976819171
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Feb 6 14:19:52 2012 -0500
+
+    Moved priorities into rules, updated per-packet code to match. Not 100% sure about per-flow correctness. Need to go over more carefully. Changing priorities uncovered bug with modify that explains openflow errors from too many entries. Modify replaced w/ install-delete.
+
+commit fdd5007c908a297ab07cfa166b70bc3b0271679c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Feb 4 14:00:04 2012 -0500
+
+    Added cycle detection to flow_space computation
+
+commit 2d0181b010d58325f3837742d9df3c3d2d364749
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Feb 3 11:05:10 2012 -0500
+
+    Changed funky rule tracking system with slightly more transparent dictionary system
+
+commit 1e4b968f1af331fa6db60669c3547ab396b2fd5a
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Feb 2 20:15:48 2012 -0800
+
+    Revert inadvertent push of Waxman
+
+commit 72a7fc4c58cb5f34cea3fafaebc0c308c4c9e473
+Merge: a91ab78 2c34b02
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Feb 2 20:11:20 2012 -0800
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit d358a454b3fdc11f9667926837d15ca02e61a8ff
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Feb 2 20:07:13 2012 -0800
+
+    Checkpoint with debugging
+
+commit 2c34b02351ae4cafff33e0a8ac3e9993473efca0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 17:42:44 2012 -0500
+
+    Argument bug left from two-phase refactoring
+
+commit 50e177e569a6d1abafe60307000c4ae494e2cf69
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 17:36:10 2012 -0500
+
+    Refactor mk_versioned_policies. Should be more readable now, if not perfect yet
+
+commit cfa2110dea9bcb680a5bfbccf8528207fff81543
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 17:15:16 2012 -0500
+
+    Removed a couple of TODOs
+
+commit 45944dc131002219a8af1b6da95f2a2d6db921bf
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 17:12:36 2012 -0500
+
+    Restored NOX-only mode. Now use -e for experimental mode
+
+commit 6ec5cfb8d1432c13c81d88ec045ef8541f8803e2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 16:19:56 2012 -0500
+
+    Refactored overhead code into separate function
+
+commit 817e92c667a7a93d430b47ca80c0fab73bc0f18c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 11:22:13 2012 -0500
+
+    Extended comments on update interfaces
+
+commit 3e2c80ec244d0d308ce63e39d2d849b032e536e6
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 11:19:12 2012 -0500
+
+    Added comments to optimizations
+
+commit c04d9fd7ec3f1869acd609ca1e641907f6536210
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 11:15:12 2012 -0500
+
+    Refactoring code layout
+
+commit ecc08c024707f2371ea867269066ad8876a43827
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 11:05:26 2012 -0500
+
+    renamed per_packet_naive_update -> full_per_packet_update
+
+commit 50e59e3856f1c497f29a7d23b5d1e9193a6d2db6
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 11:04:08 2012 -0500
+
+    Factored out two phase commit to separate function
+
+commit 4cbe7c9626a31e6f73644d5747fc48c43b121ae6
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Feb 1 10:14:20 2012 -0500
+
+    Refactored extension update into separate function
+
+commit 1da2c49bef53922ddc1635683100497c7d26785c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 30 17:47:34 2012 -0500
+
+    Forgot Makefile in last commit
+
+commit 16160953ff214007e54d96628b028fd503202d4b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 30 16:36:31 2012 -0500
+
+    Big commit after SIGCOMM push. Should be consistent now
+
+commit 8d5b26151347c52401e9cb1d73f954e1f22e2b78
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 27 20:20:28 2012 -0500
+
+    Devil example
+
+commit 543d0333d1f026ff1a39feaf8fe904d5a371e8a0
+Merge: 3660168 996ad52
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 27 19:59:06 2012 -0500
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 996ad52c0e629827ca2595c7554fa007eff3901f
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Fri Jan 27 16:58:20 2012 -0800
+
+    (Possibly faulty) attempt to bring the waxman example up to speed with Mark's recent changes.
+
+commit 3660168a32e04e434203760b031d3305e6cec99a
+Merge: 5eeca0e 60301e9
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 27 15:10:15 2012 -0500
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 60301e949c296a601631f358fc478f00cc63bf3b
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Fri Jan 27 11:56:14 2012 -0800
+
+    Adding IN_PORT to routes
+
+commit 5eeca0ee66ba8f7a515727b7fea5ad1fd8ea6856
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 27 14:39:27 2012 -0500
+
+    Refactored routing_fattree to match style of routing
+
+commit 8776bbf3dd6253adf361bbe0cb6d8687698e7315
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 27 13:08:10 2012 -0500
+
+    Added fattree examples
+
+commit b926d66138d455d31ef90f6172bb8e132874c997
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 27 13:05:44 2012 -0500
+
+    Added flags for controlling optimization to routing.py
+
+commit 7ce56d11450e16428f6e489edd806d74ad3f8fed
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 27 13:05:01 2012 -0500
+
+    Lots of hacking to add experiment mode (-e) to run.py to skip mininet. Should help us scale it up
+
+commit 6f48d736f467d4cc01151b079a98e8430ac62235
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 26 15:56:47 2012 -0500
+
+    Refactored examples to make rapid modification much easier.
+
+commit 91b377352186ac1f238f793cafda62a277d1d4d6
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 26 13:56:42 2012 -0500
+
+    Added overhead percentage calculations
+
+commit f91d3fb67b4b444668d403056a77cf4b8306eb24
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 26 12:27:40 2012 -0500
+
+    Counting modifies, but it wasn't printing them out
+
+commit fa449ea037256bf5a06cfdafe3f7347471e24eab
+Merge: f17f28c 752e3e1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 26 11:29:14 2012 -0500
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit f17f28c7d02c6936431256bb0a91ebd30fd2bb99
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 26 11:28:55 2012 -0500
+
+    We were dropping the modify counts from the total. This makes our numbers even better!
+
+commit 752e3e10d84bd38f18404ba1bc0eefd37b773d77
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Wed Jan 25 17:29:56 2012 -0800
+
+    Added clique example.
+
+commit 3b6d2ec75e25f0dda9a303af71bda71be8b7edc8
+Merge: 6f8d486 26fdac4
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Wed Jan 25 17:15:31 2012 -0800
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 6f8d4867bf701fd205853c21f76359f8c67e0190
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Wed Jan 25 17:15:21 2012 -0800
+
+    Updated hub example to erase from a larger graph, rather than regenerate a smaller graph (that no longer has certain ports).
+
+commit 26fdac4e71bc0ba1ddb05321716e853276d8abd9
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 19:51:03 2012 -0500
+
+    Added guard checking for nodes that are no longer in the network. Hat tip to Cole for hitting this corner case. Fist shake to Cole for hitting this corner case
+
+commit 9e09e63b1efbfeecf0e0459328953ed1ad05c132
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Wed Jan 25 16:28:32 2012 -0800
+
+    Added a hub example.
+
+commit 751232913d353e85191da6dbf7e2d39adfd43123
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 16:43:00 2012 -0500
+
+    Somehow NW_SRC_N_WILD disappeared from policy.py...
+
+commit 0c1bf1b8992226217c5f3487e415678cf7f95878
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 16:33:19 2012 -0500
+
+    Added in modify_code I left out of packet_naive. Oops
+
+commit 4b4c6e00402e2bfe1c686b2abf1da9c25e83008b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 16:30:47 2012 -0500
+
+    Found bug in way extension updates were calculated for multicast. Simplified to work on abstract policies ala partial_per_packet. Wish I'd thought of this earlier...
+
+commit 5b3fdd4b15f67947d67fe754f64c0c189d7cfc28
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 15:09:46 2012 -0500
+
+    Stupid git revert forces me to commit a non-change
+
+commit 8a58c181caaf4d1cdca4221849364e606211963c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 14:29:28 2012 -0500
+
+    Finally tracked down subtle little reference tracking bug, results look right, haven't had verified configurations yet
+
+commit 08b6ef67efc472618fa5138f14c32d0582397ac9
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 11:40:07 2012 -0500
+
+    Added modify code to naive update for fair comparison
+
+commit 0f6b5d2ea3fe2a8fe96b133eed2c94a2f5f0c79a
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 11:29:46 2012 -0500
+
+    Dropped more dead code
+
+commit d0b336073af8ba3695458c9b3a4390d93aadacca
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 11:28:01 2012 -0500
+
+    Dropped dead code, minor clean-up
+
+commit 20570f609a22f89b61ff38c6e2531dad52dd88a3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 25 11:21:03 2012 -0500
+
+    Rewrote partial_per_packet_update to run on abstract, not concrete policies. Goodbye nightmare hacks, hello simplicity
+
+commit b1ef769ca0f60ad1c77b1fcaa546a22eb1cc240c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 24 11:14:44 2012 -0500
+
+    Bug fix in update_lib
+
+commit 1cafaf334c1be0dc10b9cdad59f78a66f1f1b88c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 24 10:21:50 2012 -0500
+
+    Fixed bug in rule __eq__ that caused policy diff to misbehave
+
+commit 83d0e835c12dc1b72e5ff381bc8f0f869a68cea0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 24 09:25:27 2012 -0500
+
+    Added per_packet_naive_update method to update_lib for evaluation
+
+commit f7b42f4ed250042d5fdbe707456fb125e0144cf2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 24 09:17:42 2012 -0500
+
+    Added naive evaluation to makefile
+
+commit 92eed3937068d650e471deeda994a454eaeb6caf
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 24 09:16:08 2012 -0500
+
+    Added main_naive methods to examples for evaluation
+
+commit 8d9b744183b3eeb0ca38804fd13ed5add5aa754c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 24 08:42:00 2012 -0500
+
+    Fixed bug in rule.apply for modify actions
+
+commit 63b2aa4be451aba63873c75122f9224b3dbed083
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 23 20:10:24 2012 -0500
+
+    Minor change to stats printout
+
+commit 917f07df3c4038fa0d0a202cc833c8a3c5367941
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 23 20:09:46 2012 -0500
+
+    Added stats for maximum rules installed
+
+commit 5da274a211a9afb222acaa7f37692a287d85d93c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 23 16:14:46 2012 -0500
+
+    Added Makefile with test targets
+
+commit df68a8410a7dde6650b966c7eb30248a15dd11fc
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 23 14:24:45 2012 -0500
+
+    Added rule garbage collection
+
+commit c50c557ca9d1657432218f28c61f76e959f0fef8
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 23 12:52:23 2012 -0500
+
+    Commented off dead code left in from old commit. Oops!
+
+commit 3cbacaaa9da3e76ac2f2ba13c36030e8eb4419f0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 23 12:45:49 2012 -0500
+
+    Changed optimizations to use priorities consistently
+
+commit 3490e3f3f803451be268f1c8c257a95410e6306a
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Jan 21 15:03:22 2012 -0500
+
+    Forgot to import string
+
+commit d09e1409160bb97f7d9ee8f794a426df0beedccd
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Jan 21 14:51:46 2012 -0500
+
+    Updated to use tree traces instead of list traces to support multicast example
+
+commit 810e323fe582251a6fcc28fc2f102005263f8596
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Jan 21 12:27:31 2012 -0500
+
+    Added IP prefix matching to Pattern
+
+commit 3db5a8315c49ea05ea12996c6f400740ae00ce42
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 16:10:23 2012 -0500
+
+    Oops, left typo in multicast.py
+
+commit c5db8c79f3c31886970e496384d3ff4e8d102fb4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 15:52:23 2012 -0500
+
+    Brought multicast up to date
+
+commit 36bc9bcc8fcff3cbfecfd9c6a468cb60f46f2852
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 15:23:40 2012 -0500
+
+    Changed acl_packet to report update stats
+
+commit f5beac94e5bcc2f5d57de9aa7fcb4a415aa4be8d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 15:23:00 2012 -0500
+
+    Fixed bug in __eq__ for packet_path
+
+commit 4da425e9659fb2c80f994d0603b3b450ffc3d4f8
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 15:15:47 2012 -0500
+
+    Brought acl_packet up to date
+
+commit 6bff1ecfa5057adf62d75a92b42b7dae0e6c344e
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 14:14:45 2012 -0500
+
+    Changed policy_of_dict so that it can be used in current examples as-is
+
+commit ceee3508b3d8b1c2d79032ff85374498de2f0ec3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 13:18:54 2012 -0500
+
+    Added __str__ method to packet_path
+
+commit 8f5b3ce1fa3d976aad4a270fff1ac7b96ce7ebed
+Merge: 8c13283 c2e7897
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 13:17:51 2012 -0500
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 8c1328319df1f886572e21ceb7e364f23dfee72b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 13:16:59 2012 -0500
+
+    Tackled the obvious bugs in partial_flow_update
+
+commit c2e789791a4e7b7c105eba452be4eea547873f46
+Merge: 3736e15 67d3fb2
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Fri Jan 20 09:00:51 2012 -0800
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 3736e15ddd0854861143d3193ab2607927b8159d
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Fri Jan 20 09:00:45 2012 -0800
+
+    Added new policy generators to verification.py.
+
+commit 2adf9c34f73d2010f7b11ceda1bb19ca32be970c
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Jan 20 08:22:20 2012 -0500
+
+    Fixed bug in config.__add__ causing compute_flow_space to behave strangely
+
+commit 67d3fb24a9a7bec53fa6841b7d87da70b2795d31
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 19 13:55:00 2012 -0500
+
+    Changed Waxman.py to use Pattern(). Untested
+
+commit d46db50f04f437782a04bc5941411e834fb32494
+Merge: 5227450 a238174
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Thu Jan 19 10:39:32 2012 -0800
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit a2381746514eec36903faa4245867cf44ffb8c30
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 19 12:41:06 2012 -0500
+
+    Minor change to bring print_smv to work w/ Pattern()
+
+commit a0b5886b4aa1712328ef6bd71f11a8fbaeca8501
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 19 12:39:01 2012 -0500
+
+    Another Pattern() related bug in compute_flow_space
+
+commit efab15d71704e361059c5b812e4de04d5f9dd7da
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 19 12:33:41 2012 -0500
+
+    Fixed subtle bug I introduced in mk_versioned_policies when changing to Pattern()
+
+commit e917af487b7d728537c304f45393176bfc0f3062
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 19 12:04:02 2012 -0500
+
+    Another Pattern bug in delete_rules and to_dict()
+
+commit 5a1a763b358d1b692a85244674a17745660cfeab
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 19 11:57:47 2012 -0500
+
+    Fixed more Pattern bugs
+
+commit 4e198633c2c7b2fe9927761eac65a97d96f4e3e2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 19 11:42:54 2012 -0500
+
+    Fixed bug in initializer for Pattern class
+
+commit 80dc2a0802869d197763726e650f0ae322c68c73
+Merge: 0300552 a9e7df2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 18 18:20:58 2012 -0500
+
+    Merged in Cole's changes
+
+commit 0300552c44429665059b718f76f78460324739aa
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 18 18:18:57 2012 -0500
+
+    Updated routing and routing_on_demand to use Pattern() class
+
+commit 2651eb5faf860a0a5ad8b696e99b5f1975ea5df0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 18 18:17:53 2012 -0500
+
+    Changed code to use Pattern() class. Seems to be working, may need some more testing
+
+commit 5227450a6bf93702b6023ca77e20cf7f324a8879
+Merge: 5dfdfda a9e7df2
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Wed Jan 18 12:41:39 2012 -0800
+
+    Merged trivial differences.
+
+commit 5dfdfda78d50ec740626eaf671aae696e9364e5f
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Wed Jan 18 12:40:46 2012 -0800
+
+    Added instructions for using verification.py.
+
+commit 0d78f7f063ffca85969cd3bb2e79304c0f2962a4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 18 14:42:15 2012 -0500
+
+    Refactored flow_intersection to be nice and one-liney
+
+commit 18fdb3bf4467f63b1195024359c4e012a8e0dad1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 18 14:27:21 2012 -0500
+
+    Added pattern class, haven't integrated or tested it yet
+
+commit 9e673732e05dda20ecd44acdabf814cb7b1ecfa3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 18 13:43:36 2012 -0500
+
+    Restored topology check in verify_non_reachability
+
+commit 5fa51e4247c389c99e8d5a6276a925427066b00b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 18 13:18:42 2012 -0500
+
+    Fixed bug in pattern_match
+
+commit a9e7df2f372ab8ba8862f53573d4803bb58d1ef3
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Tue Jan 17 14:34:12 2012 -0800
+
+    Accidentally commented out the nox include.
+
+commit 0f67bc9e6fa9f30d0ae5cca6bfb6f53d9c98f0d3
+Merge: 74b1202 4f745df
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Tue Jan 17 13:50:34 2012 -0800
+
+    Fixed trivial merge conflicts.
+
+commit 74b1202987cb8fe595f50c68de3bbfff81e05383
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Tue Jan 17 13:45:22 2012 -0800
+
+    Add functions for measuring the size of policy objects.
+
+commit b60c8731771a904cd32d33bdaff7bf3ee46ee762
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 17 16:25:53 2012 -0500
+
+    Changed SwitchConfiguration.add_rule() to check for existing rules
+
+commit c2d53a8ceb9e4f5922fb0fd3b266b2a2073014bc
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 17 16:23:33 2012 -0500
+
+    Fixed bug in NetworkPolicy.__len__
+
+commit b8274fcd1be7321e0d9afa665351501d578586c5
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 17 15:59:23 2012 -0500
+
+    Changed union to __add__ throughout
+
+commit d196f5a8cea6edc94f3aa5c9d1031875a43b6080
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 17 13:43:56 2012 -0500
+
+    Fixed bug in extension/remove analysis
+
+commit 4f745dffca4b6372e8a8b4b650ac2be5c6fc5d09
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 17 11:29:29 2012 -0500
+
+    Commented off partial optimization for pushing
+
+commit 6daf74c64961f65dea0a230025f952f8ee425de9
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Jan 17 11:12:13 2012 -0500
+
+    Fixed partial flow optimization to delete old unused rules as well. Doesn't seem to behave as expected, more debugging needed
+
+commit 3592b5dfef3eec99da1d4c8c0fd9cc8e7e09f8ac
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 16 14:43:50 2012 -0500
+
+    First whack at full implementation of partial flow update, some minor syntactic cleaning
+
+commit 3261f50f822f416cadb7ba046e8759b6b4c57a43
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 12 18:34:35 2012 -0500
+
+    The base analysis for the subflow optimization seems to be running without errors, but hasn't been tested yet
+
+commit e282d93e13ddaeed5257cacd07d506fe53ff3fb2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 11 15:46:45 2012 -0500
+
+    Smooshed extend/remove together so that updates combining the two are handled correctly. Still using Jen's conservative analysis
+
+commit 2f4e9e313ea7dc3ed5d0214c29a791ebcb1638cd
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Jan 11 12:03:20 2012 -0500
+
+    Changed extension analysis to use topology-free conservative version suggested by Jen
+
+commit 9b2553e7ef664a7ebd052822875efa216602b022
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 9 14:49:47 2012 -0500
+
+    Cleaning up in update_lib
+
+commit 0266e5bc1e5471c81b1ae3555e6c35083ba125c0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 9 12:03:07 2012 -0500
+
+    Refactored extend() into the body of per_packet_update
+
+commit 464acedbf60371d93fbf278e4e94ba4812806d0f
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 9 11:56:26 2012 -0500
+
+    added simple example that demonstrates extension update
+
+commit f6ab0067e31f6ffffd3c79b1a1edc2f3c6a1e7ec
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 9 11:55:37 2012 -0500
+
+    update_lib now detects and performs extension updates
+
+commit 29b6feed73c2a40d2085090095ae667c9ef49d15
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 9 11:55:10 2012 -0500
+
+    Fixed contains_matching_rule bug in policy
+
+commit 1092c95cebf6f41755d9eaf05f73f6dea9d6c9a1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Jan 5 18:21:39 2012 -0600
+
+    Changed nxtopo to better support ports, updated policy with apply actions. Untested
+
+commit 5d38c90272476c3ae2b08021d3e51b8b8d66b019
+Author: Cole Schlesinger <cschlesi@princeton.edu>
+Date:   Thu Jan 5 14:06:26 2012 -0800
+
+    Example for testing the scalability of the verification module by generating a shortest path policy (a la the routing example) for a randomly-generated Waxman graph.
+
+commit ebe169e97df721a885294931d4ca009e8c4545c1
+Author: None <None>
+Date:   Tue Jan 3 02:01:41 2012 -0800
+
+    Added installation instructions for NuSMV to the README and comments to verification.py.
+
+commit e51f01170f51efdc75f412a7f564a507db5f702f
+Author: None <None>
+Date:   Tue Jan 3 01:18:26 2012 -0800
+
+    Expose a verification function for raw CTL specs in string form.
+
+commit ac358e902392e7758700bbc838fecdde4393e49a
+Author: None <None>
+Date:   Mon Jan 2 23:46:39 2012 -0800
+
+    Integrated a verification module.  verification.KripkeModel() builds a model from a topology and policy, and KripkeModel.verify() verifies properties defined in verification, like NO_LOOPS.
+
+commit a01c3025f30aa5495fb1a084af92bdb7bcc12a3c
+Author: Cole Schlesinger <cschles1@pharaon.cs.princeton.edu>
+Date:   Mon Jan 2 16:27:42 2012 -0500
+
+    Removed test code from verification.py.
+
+commit 9054f7b0c30e600ee31938f0b6d9930b9153f131
+Author: Cole Schlesinger <cschles1@pharaon.cs.princeton.edu>
+Date:   Mon Jan 2 16:26:08 2012 -0500
+
+    Add a verification module that allows programmatic verification of network properties from within Frenetic.
+
+commit 43d0cce2dd8ae8fb0f7858d77b0b16acad9a1584
+Merge: 5cded97 d619b1b
+Author: Cole Schlesinger <cschles1@pharaon.cs.princeton.edu>
+Date:   Mon Jan 2 16:13:37 2012 -0500
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+    
+    Conflicts:
+    	updates/print_smv.py
+
+commit 5cded970383a1c8447286b93a329fe9abe804600
+Author: Cole Schlesinger <cschles1@pharaon.cs.princeton.edu>
+Date:   Mon Jan 2 16:10:51 2012 -0500
+
+    Updated to work with NXTopo objects.
+
+commit d619b1b107786d9b3fd497d77a28657c36c276ac
+Merge: 45eeba9 65e45fd
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Jan 2 13:17:37 2012 -0600
+
+    branch merge
+
+commit 65e45fd43cb04daa2869e1689b2830284cc2d436
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Sat Dec 31 08:00:16 2011 -0800
+
+    Kill dead code
+
+commit 87e273d630fd8edc2156babca485d0d33593fd2a
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Fri Dec 30 23:43:12 2011 -0800
+
+    nits
+
+commit ecd3000b38587a1cf0df42eb283f01a596d794a3
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Fri Dec 30 23:41:12 2011 -0800
+
+    Another example: a simple load balancer.
+    
+    Per-flow totally works where per-packet doesn't :-)
+
+commit 5542f4b404220cd5d879cf62649fbd03b98e16c8
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Fri Dec 30 21:45:03 2011 -0800
+
+    Checkpoint
+
+commit ea588eb25e02159d26b6dd8ef7df618c5710d776
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Fri Dec 30 17:19:12 2011 -0800
+
+    Tidying and documentation, especially in update_lib.py
+
+commit 45eeba97ec72a2cf0b2c68421af7ba1dc2ed9e2c
+Merge: 2640d70 d05d6c4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Dec 30 13:55:20 2011 -0600
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit d05d6c4964ea4a253fdced0b5d697e01f728e52d
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Dec 29 22:38:15 2011 -0800
+
+    Per flow!
+
+commit 08aa5543e326cd11ce37e54167e6e1f9db84992c
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Dec 29 20:19:25 2011 -0800
+
+    Added a new command-line option, useful for hackers, that only runs the Controller app for a specified number of seconds.
+    
+    For example, "sudo ./run.py routing -s 5 -v" runs routing for 5 seconds and then prints its output and tears down Mininet nicely.
+    
+    This will be *very* useful for debugging.
+
+commit 5ca33c4fc09239317646f1545b243af697f0554a
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Dec 29 19:57:28 2011 -0800
+
+    * Fixed signalling between controller and run.py. Now we use multiprocessing.Process to start up a listening server at the very beginning. This eliminates an annoying bug due to a race condition where the signal message could get lost.
+    
+    * Fixed a bunch of little bugs in stats and improve printing. Looks nice now. For example:
+    
+       Update Statstics
+    ------------------------------
+    Switch	(+)	(-)	Total
+    ------------------------------
+    s101	88	88	176
+    s102	34	34	68
+    s103	26	26	52
+    s104	26	26	52
+    s105	34	34	68
+    s106	88	88	176
+    ------------------------------
+    	296	148	444
+    *** Mininet Down ***
+    
+    * Changed interpretation of -v command-line parameter. If in Mininet mode, prints controller output. If in NOX-only mode, passes -v to NOX.
+
+commit 2640d70d5ccc0928cbe98f1851e01b85b7ccb637
+Merge: 439f944 0b0f4c1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Dec 29 21:02:41 2011 -0600
+
+    merged in Nate's changes to update_lib.py
+
+commit 439f9445f99e6fad2e93d25685782c7a2f4355d2
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Dec 29 20:59:16 2011 -0600
+
+    minor refactoring in policy
+
+commit ce32b5932591f374f0c3210d28a1554b56564837
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Dec 29 20:58:37 2011 -0600
+
+    Minor change to update_lib to refactor functionality
+
+commit 0b0f4c10b213d4aafa59a7daf9d3f23d523a2f55
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Dec 29 17:03:23 2011 -0800
+
+    A framework for tracking simple statistics.
+
+commit 07b8750e5eacd19b015099622afd7c2c6bdb7dfd
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Dec 29 14:23:34 2011 -0800
+
+    Low-level changes to NOX/OpenFlow API (pulled install/delete functions into update_lib).
+    
+    Changed mk_versioned_policy so that it now returns *two* policies: the internal policy and the ingress or "edge" policy.
+    
+    Implemented simple garbage collection for priorities. Kind of fun. To be totally safe, it should check that it's okay to "wrap around" back to 0xffff.
+    
+    Implemented (starvation-prone :-) per-flow. Now onto the hard part -- implementing refinement.
+    
+    Getting happy with the code. It's pretty clean now.
+
+commit edcd01af545d041c6df37bb68c10952bb1048c84
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Dec 29 13:50:53 2011 -0600
+
+    Brought print_smv up to date with current policy.py. Seems to be running test() correctly now
+
+commit ea24176e11e9286cb5667bdb9fcc81b9791ac529
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Dec 29 13:47:49 2011 -0600
+
+    Cleaned up imports in policy.py to help print_smv. Added backported implementation of OrderedDict (introduced in Python2.7)
+
+commit 1fcb1612af119144adff6c3342eb8d09a5652210
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Dec 29 13:14:02 2011 -0600
+
+    Fixed up some bugs from moving acl and acl_packet over to new run system
+
+commit 73e1fea8d7f00e64a2b865dd15eae206ea8ddb37
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Dec 29 05:56:05 2011 -0800
+
+    Zap old update.py file. Everything goes in update_lib.py now
+
+commit 2a1c116d678d2ed2e52f0aa7a390a4606a20a344
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 19:26:14 2011 -0600
+
+    Moved acl-packet over to new framework
+
+commit 66bedcc96b687c1feb391c1c14af95b88006be93
+Merge: 679352d 2b6c4a3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 18:00:38 2011 -0600
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 679352d414f900c2c6e8d1842be4c43191da5f25
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 18:00:12 2011 -0600
+
+    Moved acl to new run framework
+
+commit b061615721b26666c17addece6f6af7fda6712fe
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 15:41:50 2011 -0800
+
+    Thunks in the right place.
+
+commit 8a24058dc9310d5cccfd247d2b7b5df134684a9d
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 17:41:43 2011 -0600
+
+    NetworkXTopo -> NXTopo in acl_topo
+
+commit 3af521acc3dfed60d7f0218e35a871029ff00a2a
+Merge: 45a7782 7262e24
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 17:40:43 2011 -0600
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 45a7782302ff7a67aa78302d8f6556b5142abf6e
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 17:40:33 2011 -0600
+
+    Moved acl-topo.py -> acl_topo.py
+
+commit 7262e24d0c52d797e5d042c780688b610e10d608
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 15:16:06 2011 -0800
+
+    tiny fix
+
+commit d377cfac7dd5e7a584c817fcf0a92e815f792339
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 15:14:03 2011 -0800
+
+    Tidying.
+    
+    - Default module invoation is "main" instead of "go(1,2)".
+    
+    - Changed main for routing and multicast to nice CPS form.
+
+commit 744e79cf956b378b0c3ea239f20fb7730a72218e
+Merge: 7d2105c abb7cf4
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 16:37:27 2011 -0600
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit abb7cf41554a497f0ed45013c7001bbb46e70b39
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 14:34:32 2011 -0800
+
+    Small fixes
+
+commit b01f103d66ffa26baf0123d255defb0568e29f29
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 14:16:42 2011 -0800
+
+    Oops. Still getting used to Git. Here are the rest of the changes for the multicast example.
+    
+    Also tidied up some other pieces of code and fixed a few bugs.
+
+commit a3d0aaa6f848a8ec947c3335de402560488df076
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 14:15:50 2011 -0800
+
+    Multicast example working!!
+
+commit 7d2105c08ea4e6498f34d0bcdc224025cfa75fce
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 16:00:56 2011 -0600
+
+    Moved extend/remove into new update_lib
+
+commit 9ad07377102387e73a75b458d72f5f0bb7d2e878
+Merge: 609ab1a 28dc606
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 28 15:11:36 2011 -0600
+
+    strange merge request?
+
+commit 28dc606023d1b39bed1d533e95304badcc036c1b
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 11:20:18 2011 -0800
+
+    Tidying and fixed --nox-only command-line option.
+
+commit af83288a2849c53ce39b05ca1592ba205cc8574f
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 11:14:05 2011 -0800
+
+    Add support for --cli command-line option to (confusingly) start up the Mininet CLI.
+    
+    Hence, if you want to drop into the Mininet console, run
+    
+      sudo run.py routing --cli
+
+commit b56024c5c8aa87e1e9c68c23f17fe4dbffd71043
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 11:10:14 2011 -0800
+
+    WAHOO!! Push-button testing of update modules.
+
+commit eeeeff4e6174c4911254dfd105ccd2a210e5e0ee
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Wed Dec 28 08:57:39 2011 -0800
+
+    Awesome, new push-button testing for update modules.
+    
+    The run.py script now boots your Mininet for you :-)
+    
+    For now, the script drops you into Mininet's CLI. Working on having the module signal back to run.py when it's finished.
+
+commit 2f7a66745ac7eef37e2af439f786ec36c2a5af04
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 27 22:12:04 2011 -0800
+
+    Dangling files from last commit.
+
+commit 4fad5a7902592640383fea0d4e082a61fba505cb
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 27 22:06:52 2011 -0800
+
+    Major reorganization.
+    
+    1. Added README file. Check that out for details on how to execute the code.
+    
+    2. Added run.py file (adapted from Alec's excellent frenetic_run.py) to avoid having to boot and install NOX components manually.
+    
+    3. Added update_app.py component
+    
+    4. Moved most of the actual update code to update_lib.py
+    
+    5. Eliminated all dependencies on frenetic_net.py from the old code by adding Actions to policy.py
+    
+    6. Rationalized many things in policy.py (e.g., policy vs. configuration, made install_rules and uninstall_rules symmetric, etc.)
+    
+    7. Tidied up routing.py. All examples should conform to this style (or a refinement of it) going forward. See README for a description of the organization and a brief rationale.
+
+commit 609ab1a7372b48e2ff47a343359f4d4284a421eb
+Merge: 9c158d6 578cf75
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 26 12:16:15 2011 -0600
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 9c158d61c20c871c2ec77f7882fa68dab0b8cbf9
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 26 12:16:05 2011 -0600
+
+    First whack at Dave's update optimizations
+
+commit 578cf756971dbd1416538f78e6667cb0217d96d1
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Mon Dec 26 08:55:04 2011 -0800
+
+    Some progress on modifying update.py to use edge_ports.
+
+commit 96c3f1cc0322943372702b564453dd9a532eff45
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Sun Dec 25 15:52:08 2011 -0800
+
+    Tidying
+
+commit cb2cd6690173f010d7c7a3b72b344f8c24e7ab2e
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Sun Dec 25 15:49:24 2011 -0800
+
+    Multicast example working.
+    
+    * Computes a spanning tree
+    
+    * Generates forwarding policies from the spanning tree (including address modifications)
+    
+    * Updates changes spanning tree and the multicast source :-)
+    
+    * Requires a NOX bug fix:
+      Change ipaddr.addr -> ipaddr on line 168 of core.py
+
+commit 30c9476845d6e0ef7f165f36a2b00eb8564bb87d
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 23:13:58 2011 -0800
+
+    * Some tidying:
+      - moved nxtopo.py up to the top-level updates directory
+      - removed routing-nox.py
+    
+    * Extended routing example with a third update: bringing additional hosts online.
+      This should be a case where the optimizationed per-packet implementation is a huge win
+    
+    * Added comments to routing.py
+
+commit c346d4525c976ef8210847e5cda90ebd2c1951a1
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 19:49:31 2011 -0800
+
+    ASCII Art FTW!
+
+commit 4488b52a81adbbe115e9b809c0fa5741e29ac156
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 19:45:28 2011 -0800
+
+    * Improved the routing example so that naively moving from configuration #1 to #2
+      could introduce a forwarding loop.
+    
+      Topology looks like this
+    
+              {h1,h2}
+                 |
+               s101
+              /   \
+             /     \
+           s102   s103
+            |  \ /  |
+            |   X   |
+            | /  \  |
+           s104   s105
+             \     /
+              \   /
+              s106
+                |
+             {h3,h4}
+
+commit 34ebda6143983aadd5f6a361be0d6e7fc819ae1c
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 14:21:00 2011 -0800
+
+    * Ancient Compiler hack
+    
+    * Little tweaks to get per-packet running on routing example! Woohoo!
+
+commit f04620996f8fc75b8ac8ef9dc020b010998e555a
+Merge: c4e9a7b 81c356f
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 14:03:53 2011 -0800
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit 81c356fd479bcb60b0161e118fbb030af8a4b133
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 21 17:05:49 2011 -0500
+
+    Add __len__ to SwitchConfigUration
+
+commit 094f0d0362bd6fd19ec99ddb90c716509e6e29ad
+Merge: ae4f92f aad3990
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 21 16:10:17 2011 -0500
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit ae4f92f08f970beab92b41951542afaca77fd180
+Merge: b3e14ea 538d431
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 21 15:58:24 2011 -0500
+
+    merge commit update.py
+
+commit b3e14ea2812ca10ba698421256409352b5a73494
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 21 15:53:46 2011 -0500
+
+    Added more fine-grained instrument output to update
+
+commit 3a307e76bd3f85704b2b6fea0ca09d6b73e731d1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 21 15:17:20 2011 -0500
+
+    removed redundant convert_to_nox() method from update
+
+commit 7b3fcd1b2938391e74cb7f55fd002de432aa8184
+Merge: 10e7d77 e1cb600
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 21 14:39:26 2011 -0500
+
+    Fixed up conflicts in update and policy
+
+commit 10e7d775f34b4107800b9fc8cc2f429c806ba2e5
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 21 14:33:40 2011 -0500
+
+    Moved acl examples to acl dir
+
+commit b30c3e911d5a71839110cd49550d005ccbfefdf3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Dec 21 14:18:47 2011 -0500
+
+    Added process,diff to policy representation
+
+commit 1e9c332bc376f176e6c82faf9591022921420cdc
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Dec 20 17:42:56 2011 -0500
+
+    fixed bug in update.py, added trivial performance counter
+
+commit c4e9a7b949f291683e59f474ac85b849d1c05586
+Merge: 478f554 7956ce3
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 14:00:31 2011 -0800
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit a5e61bbdafd91f2a77b8d4dd24d42415e23f09d4
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 14:00:04 2011 -0800
+
+    Small tweaks.
+
+commit aad3990f75e13ee08fe629b89d916a7cc9a6b5a7
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 13:06:31 2011 -0800
+
+    Eliminate shadowing of inport header projection function
+
+commit 538d4315614b5e566bc4acec84ded772bb399e28
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 12:41:48 2011 -0800
+
+    * Rationalized representation of ports. It is now an annotation on each node so that if you do
+    
+      t = NXTopo(...)
+      ... # bunch of operations to construct topology
+      t.finalize()
+      g = t.nx_graph()
+    
+      # x is some node
+      g.node[x]['ports'][y]
+    
+    tells you the port on x that is connected to y.
+    
+    * Added IN_PORT action
+    
+    * Tidying in routing.py
+
+commit e1cb600a241840306fce240333349d18951cc5f6
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 11:10:21 2011 -0800
+
+    * Refactored update module so it ISN'T a NOX component.
+    
+    * Refactored NXTopo so it has a clean interface.
+    
+    * Got very simple version of routing example working.
+
+commit d5484a3f95773fa2dda1ab17f6d6956dfa4d0c52
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Tue Dec 20 07:13:39 2011 -0800
+
+    Some progress
+
+commit 297aade739caa159b1a45c4fcd4aa44f43b613d1
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 19 18:25:28 2011 -0500
+
+    changed per-packet to take a graph in addition to optional edge_switches
+
+commit 173848526023f9e803073f7f06c3dea85c00ac47
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 19 18:06:32 2011 -0500
+
+    added comment about requiring --arp to adaptive_routing
+
+commit ef470e02b80213d1e74bc6419eb50ada4c13ecca
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 19 18:04:45 2011 -0500
+
+    changed adaptive_routing to install static routes
+
+commit 6857e95756e9a7c94c0a376e96f530e4dd69f273
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 19 17:50:27 2011 -0500
+
+    removed arp code from adaptive_routing
+
+commit 99df47db6a8624d1f3cd3ff6d139e352c2a20aaf
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 19 17:48:07 2011 -0500
+
+    Fixed bug in last commit in nxtopo._host_location
+
+commit ecd6ddd5809df4e3e686834c5b1111be97eb9d2b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 19 17:32:31 2011 -0500
+
+    changed nxtopo to take port numbers in host_location argument, updated acl-topo to match
+
+commit f98189c711aa718475431a36de5036d961311990
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Dec 19 11:00:01 2011 -0500
+
+    Cleaned up adaptive_routing, removed dead code
+
+commit a6b362dfe2d332435c50f285fa2c5248f9ab9d42
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 21:50:00 2011 -0500
+
+    Cleaned up comments in nxtopo
+
+commit 8df88ce39c2b36d0ce576eca19b302965c6d4499
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 21:44:45 2011 -0500
+
+    nxtopo now computes the edge switches
+
+commit fe083fd8ae270f86ee82d9059fccff0ad72d22cf
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 21:29:54 2011 -0500
+
+    Added class to convert networkx graphs to mininet, converted acl-topo to use new class
+
+commit 2ed84fbb3f80fa57e2ec2e6d432407b2eb67ca9b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 17:19:04 2011 -0500
+
+    Refactoring acl-topo.py, almost to the point of a general nx -> mn representation
+
+commit c65c36e8d4a9940ac12366609690e4cf0d3fbd2f
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 16:26:57 2011 -0500
+
+    adaptive_routing now sends out packets that come to the controller
+
+commit fb253a0a1d8ef33de2c4991e6c7c47387fed0e74
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 15:44:21 2011 -0500
+
+    adaptive_routing core is working, but current drops first couple of packets because I don't send packets back out
+
+commit 67663b9cc0da3ceb9ace4fa5de59346288d6d8b3
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 15:21:33 2011 -0500
+
+    Got adaptive_routing to start routing pings, though with crazy duplicates and possibly loops?
+
+commit 8b60c567fd53327fd54f39bce6e708a4d868d856
+Merge: aea1dc5 f380710
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 14:41:43 2011 -0500
+
+    Merge branch 'master' of https://frenetic-lang.org/git/frenetic-code
+
+commit aea1dc549343541d4ef06558d4a2dbd478b4c625
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 14:41:35 2011 -0500
+
+    Adaptive routing getting close, strange bug preventing rules from firing
+
+commit 5218a47fb0c7a701a87a78ca980a695451afa430
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 18 14:40:04 2011 -0500
+
+    Extended functionality of policy, fixed minor bugs in update
+
+commit c8962b0b4d18da32b815e9ebdeb408d4588402dd
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sun Dec 11 21:41:26 2011 -0500
+
+    Minor formatting changes in acl.py
+
+commit f38071016abc17b651168adf03681da9c0cbcabe
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Sun Dec 11 11:31:16 2011 -0500
+
+    Fixed lengths on header fields.
+    
+    I didn't remove these, but I think we can safely elide
+    
+      AP_SRC
+      AP_DST
+      GROUP_SRC
+      GROUP_DST
+    
+    for now. Although openvswitch supports them, they're not in any
+    version of the OpenFlow specification I've seen.
+
+commit 90267913cb48d57a2d5af496e3c60e9a3515504e
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Sun Dec 11 11:25:46 2011 -0500
+
+    Manually added Cole's patch for generating a Kripke structure from a
+    configuration and topology.
+
+commit c7cb7b4a83dceab41e65bc1b480141764e65eeaf
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Dec 10 18:51:05 2011 -0500
+
+    Futher tweaking to update,acl. update() now takes an optional ordering list
+
+commit 85164c7401de34244c22b9db188fcc27453bc8d6
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Dec 10 18:12:32 2011 -0500
+
+    Fixed typo in acl-packet that made it into last commit
+
+commit 4b4002b9f5bda54f089623e19cdcf9eee7b90145
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Dec 10 18:05:12 2011 -0500
+
+    Fixed bug in acl-packet that allowed traffic through because I forgot to specify TCP protocol
+
+commit a07e66ad99e8d56f4fdd1fea69c627715573dbb5
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Dec 10 17:43:38 2011 -0500
+
+    Refactored acl-packet example to match final HotNets version, explicitly construct configurations. Updated acl-topo to use match HotNets version as well
+
+commit 6c89f90b00a4f4fd0dc84ac77edd3770d5903824
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Dec 9 14:43:04 2011 -0500
+
+    Updated policy model, moved per-packet update and acl-packet example to use new policy model
+
+commit 01538603284f1153142497098001a762a0d9454b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Dec 8 16:02:10 2011 -0500
+
+    fixed bug in update.py, probably introduced new bug as well
+
+commit f9b800723a12776e5931b49420ab9e548cc042e0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Thu Dec 8 15:29:10 2011 -0500
+
+    Updated policy.py, now includes flow/action documentation for Cole
+
+commit 0c108ac5809f2d91687dc1630b06cd20744d7575
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Tue Dec 6 15:13:37 2011 -0500
+
+    Added policy python classes for Cole
+
+commit c3e9d69905cc155fa1da3cc22b25584a229c01c7
+Author: Jennifer Rexford <jrex@jennifer-rexfords-macbook-pro.local>
+Date:   Thu Dec 1 22:48:51 2011 -0500
+
+    load balancer
+
+commit 54cf3533edb4e86c54c320b3a3e0e3678f00dc62
+Author: Nate Foster <jnfoster@cs.cornell.edu>
+Date:   Thu Dec 1 22:37:50 2011 -0500
+
+    Reorganized to put things in examples
+
+commit 50b89f1a21ebfdd7d3dd815dd284253d6f7bf256
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Sat Nov 26 12:51:58 2011 -0500
+
+    I think this should almost be correct. More testing needed
+
+commit 3d2eaca7b2097446534eab3af795c1ba64d42024
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Fri Nov 25 22:31:16 2011 -0500
+
+    rewritten version of per-packet update framework. Still not correct, needs to do more rule management
+
+commit 153ad71905287c322dae029899cb2656acfaa65a
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Oct 3 11:11:25 2011 -0400
+
+    Removed some debug printing, brought acl-packet up to match the new interface which specifies edge switches
+
+commit 44b6a9d3bfe5a56dcec0d6c255a059446dce2579
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Sep 21 17:33:39 2011 -0400
+
+    per packet versioning seems to be working
+
+commit 7e9c304bbd994d949196dec81760702628000844
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Sep 21 14:53:19 2011 -0400
+
+    Greatly simplified acl-packet. No versioning yet
+
+commit 91d7cb37a160c7d983ec9d4656652fc343342fa0
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Sep 21 13:16:52 2011 -0400
+
+    acl-packet seems to be working for both ACLs. No versioning yet, next step is to refactor and compactify
+
+commit 787b92bb70e9c801086ba466eea7a9a2a0473a0b
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Sep 21 11:16:56 2011 -0400
+
+    acl-packet seems to be working for the first ACL, no versioning tried yet
+
+commit 5aa5cd65f43c494de389d459327fe4db9138c0b5
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Wed Sep 21 10:26:53 2011 -0400
+
+    acl-nox seems to be handling ARP correctly now
+
+commit 5d0eb4fd12b082ecce5ba4c6cbf8da843194baeb
+Author: Mark Reitblatt <reitblatt@cs.cornell.edu>
+Date:   Mon Sep 12 14:02:18 2011 -0400
+
+    First whack at ACL example in NOX. Seems to be working, time to move on to static configuration version

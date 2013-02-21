@@ -1,0 +1,19 @@
+import unittest
+import policy
+
+class testPolicy(unittest.TestCase):
+    """
+    A test class for NOX policy objects module
+    """
+
+    def testPatternIntersectionReflexive(self):
+        patt = Pattern(nw_src="10.0.0.1")
+
+        self.assertTrue(patt.intersects(patt))
+        
+    def testUnversionedPatternIntersection(self):
+        pattern1 = Pattern(nw_src="10.0.0.1")
+        pattern2 = Pattern(in_port=1)
+
+        self.assertTrue(pattern1.intersects(pattern2))
+        self.assertTrue(pattern2.intersects(pattern1))

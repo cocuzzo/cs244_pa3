@@ -1,0 +1,3 @@
+class UpdateObject(object):
+    """ Represents sequence of NOX commands to perform an update """
+    

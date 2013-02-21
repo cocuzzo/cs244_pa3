@@ -1,0 +1,21 @@
+def shortest_path_policy(graph):
+    raw = defaultdict(lambda:[])
+    for src in graph.hosts():
+        for dst in graph.hosts():
+            if src != dst:
+                try:
+                    path = nx.shortest_path(graph,src,dst)
+                except nx.exception.NetworkXNoPath:
+                    continue
+                last = path.pop(0)
+                curr = path.pop(0)
+                for next in path:
+                    inport = graph.node[curr]['ports'][last]
+                    outport = graph.node[curr]['ports'][next]
+                    pat = { IN_PORT:inport, DL_TYPE:0x800, \
+                            NW_SRC:ip(src), NW_DST:ip(dst) }
+                    acts = [forward(outport)]
+                    raw[curr].append((pat,acts))
+                    last = curr
+                    curr = next
+    return policy_of_dict(raw)                    

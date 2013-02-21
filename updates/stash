@@ -1,0 +1,86 @@
+diff --git a/updates/policy.py b/updates/policy.py
+index b499a0c..8445b5b 100644
+--- a/updates/policy.py
++++ b/updates/policy.py
+@@ -396,34 +396,33 @@ class Rule:
+ class SwitchConfiguration:
+     def __init__(self,rules=None):
+         if not rules:
+-            self.rules = {}
++            self.rules = []
+         elif isinstance(rules, SwitchConfiguration):
+-            self.rules = dict(rules.rules)
++            self.rules = list(rules.rules)
+         else:
+-            self.rules = dict([(rule.pattern, rule) for rule in rules])
++            self.rules = list(rules)
+             
+     def __iter__(self):
+-        return self.rules.values().__iter__()
++        return self.rules.__iter__()
+ 
+     def __len__(self):
+-        return len(self.rules.values())
++        return len(self.rules)
+         
+     def add_rule(self, rule):
+         assert(isinstance(rule,Rule))
+         # TODO: keep rules in sorted order
+         # Not just rule equality, but we need to remove rules with the same pattern to avoid ambiguity
+-        self.rules[rule.pattern] = rule
++        self.rules.append(rule)
+ 
+     def contains_matching_rule(self,other_rule):
+         assert(isinstance(other_rule,Rule))
+         # MJR: dict equality is reference equality, we want extensional equality
+-        if other_rule.pattern in self.rules:
+-            return other_rule == self.rules[other_rule.pattern]
++        return other_rule in self.rules
+ 
+     def contains_pattern_matching_rule(self,other_rule):
+         assert(isinstance(other_rule,Rule))
+         # MJR: dict equality is reference equality, we want extensional equality
+-        return other_rule.pattern in self.rules
++        return any([rule.pattern for rule in self.rules if rule.pattern == other_rule.pattern])
+ 
+     # # This function takes an abstract packet (flow dict) and evaluates the configurations actions on it. Feeding in concrete packets will only behave as expected if there is no overlap in rule patterns.
+     # def apply(self, tree):
+@@ -436,10 +435,10 @@ class SwitchConfiguration:
+     #     return tree
+     
+     def convert_to_nox_configuration(self):
+-        return [rule.convert_to_nox_rule() for rule in self.rules.values()]
++        return [rule.convert_to_nox_rule() for rule in self.rules]
+ 
+     def __str__(self):
+-        return string.join([rule.__str__() for rule in self.rules.values()], '\n')
++        return string.join([rule.__str__() for rule in self.rules], '\n')
+     
+     def is_empty(self):
+         return self.rules == {}
+@@ -448,21 +447,21 @@ class SwitchConfiguration:
+         if len(self.rules) > 0:
+             sum_patterns, sum_actions = reduce(
+                 lambda (p1,a1),(p2,a2): (p1+p2,a1+a2), 
+-                [(d['Patterns'],d['Actions']) for d in map(lambda r: r.size(), self.rules.values())])
++                [(d['Patterns'],d['Actions']) for d in map(lambda r: r.size(), self.rules)])
+         else:
+             sum_patterns, sum_actions = 0,0
+-        return {'Rules' : len(self.rules.values()), 
++        return {'Rules' : len(self.rules), 
+                 'Patterns' : sum_patterns, 
+                 'Actions' : sum_actions}
+ 
+     def __add__(self, other):
+-	config = SwitchConfiguration(self.rules.values())
++	config = SwitchConfiguration(self.rules)
+ 	for rule in other:
+ 		config.add_rule(rule)
+ 	return config
+ 
+     def __len__(self):
+-	return len(self.rules.values())
++	return len(self.rules)
+ 
+ class NetworkPolicy:    
+     def __init__(self, configs=None):

@@ -1,0 +1,79 @@
+test: routing multicast
+
+routing: fattree waxman smallworld
+
+multicast: fattree_multicast waxman_multicast smallworld_multicast
+
+smallworld:
+	for flavor in ${FLAVORS}; do \
+	    for opt in ${OPTS}; do \
+		echo "routing SmallWorldTopology $${flavor} $${opt}"; \
+		sudo ./run.py -e -n ${SMALLWORLD_SIZE} -t SmallWorldTopology routing $$flavor $$opt; \
+	    done ; \
+	done
+
+fattree:
+	for flavor in ${FLAVORS}; do \
+	    for opt in ${OPTS}; do \
+		echo "routing FattreeTopology $${flavor} $${opt}"; \
+		sudo ./run.py -e -n ${FATTREE_SIZE} -t FattreeTopology routing $$flavor $$opt; \
+	    done ; \
+	done
+
+waxman:
+	for flavor in ${FLAVORS}; do \
+	    for opt in ${OPTS}; do \
+		echo "routing WaxmanTopology $${flavor} $${opt}"; \
+		sudo ./run.py -e -n ${WAXMAN_SIZE} -t WaxmanTopology routing $$flavor $$opt; \
+		done ; \
+	    done ; \
+	done
+
+smallworld_multicast:
+	for flavor in ${FLAVORS}; do \
+	    for opt in ${OPTS}; do \
+		echo "multicast SmallWorldTopology $${flavor} $${opt}"; \
+		sudo ./run.py -e -n ${SMALLWORLD_SIZE} -t SmallWorldTopology multicast $$flavor $$opt; \
+		done ; \
+	    done ; \
+	done
+
+fattree_multicast:
+	for flavor in ${FLAVORS}; do \
+	    for opt in ${OPTS}; do \
+		echo "multicast FattreeTopology $${flavor} $${opt}"; \
+		sudo ./run.py -e -n ${FATTREE_SIZE} -t FattreeTopology multicast $$flavor $$opt; \
+		done ; \
+	    done ; \
+	done
+
+waxman_multicast:
+	for flavor in ${FLAVORS}; do \
+	    for opt in ${OPTS}; do \
+		echo "multicast WaxmanTopology $${flavor} $${opt}"; \
+		sudo ./run.py -e -n ${WAXMAN_SIZE} -t WaxmanTopology multicast $$flavor $$opt; \
+		done ; \
+	    done ; \
+	done
+
+
+# multicast:
+# 	for flavor in 1 2 3 ; do \
+# 	    for opt in none ext partial all ; do \
+# 		echo "multicast $${flavor} $${opt}"; \
+# 		sudo ./run.py -e multicast $$flavor $$opt; \
+# 	    done ; \
+# 	done
+
+# load_balancer:
+# 	sudo ./run.py load_balancer
+
+# fattree: 
+# 	for count in 2 4 6 8 10 12 14 16 18 20 22 24 ; do \
+# 	    for flavor in 1 2 ; do \
+# 	        for opt in none all ; do \
+# 		    echo "routing_fattree $${count} $${flavor} $${opt}"; \
+# 		    sudo ./run.py -e routing_fattree $$count $$flavor $$opt ; \
+# 		done ; \
+# 	    done ; \
+# 	done

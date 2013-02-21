@@ -1,0 +1,65 @@
+from mininet.topo import Topo, Node
+import networkx as nx
+
+class NetworkXTopo( Topo ):
+
+    # graph is an NX graph where each node is either the dpid of a
+    # switch.
+    # switches is a list of switch dpids
+    # edge_switches is a list of switch dpids
+    # hosts is a list of host dpids
+    # host_location is a map from hosts to switches, telling where
+    # they should be located
+    def __init__( self, graph, edge_switches, host_location, enable_all = True ):
+        
+        # Add default members to class.
+        super( NetworkXTopo, self ).__init__()
+       
+        self.graph = graph
+        self._switches = graph.nodes()
+        self._hosts = host_location.keys()
+        self._edge_switches = edge_switches
+        
+        self._host_location = host_location
+        self.port_to = {}
+
+        # Add switches to mininet
+        for node in self.graph:
+            self.graph.node[node]['switch'] = True
+            self.add_node(node, Node(is_switch = True))
+
+        # Add hosts to mininet and graph
+        for host in host_location:
+            self.graph.add_node(self.ip(host), switch = False)
+            self.graph.node[self.ip(host)]['host'] = host
+            self.graph.add_edge(host,host_location[host])            
+            self.add_node(host, Node(is_switch = False))
+
+        # Construct Mininet representation
+        
+        for edge in self.graph.edges():
+            src,dst = edge
+            if not self.graph.node[src]['switch']:
+                m_src = self.graph.node[src]['host']
+            else:
+                m_src = src
+                
+            if not self.graph.node[dst]['switch']:
+                m_dst = self.graph.node[dst]['host']
+            else:
+                m_dst = dst
+                
+            self.add_edge(m_src,m_dst)
+            
+            src_port,dst_port = self.port(m_src,m_dst)
+
+            if not src in self.port_to:
+                self.port_to[src] = {}
+            if not dst in self.port_to:
+                self.port_to[dst] = {}
+                
+            self.port_to[src][dst] = src_port
+            self.port_to[dst][src] = dst_port
+            
+        # Consider all switches and hosts 'on'
+        self.enable_all()

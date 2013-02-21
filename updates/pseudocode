@@ -1,0 +1,72 @@
+Subspace
+
+Abstract Rules are unversioned rules. These are the arguments to the high-level update functions
+Concrete Rules are rules with versioning, split into edge/internal rules. These are what get installed on actual switches.
+
+traces: AbstractConfig -> Trace List
+
+rules: Trace List -> AbstractConfig
+
+rules(traces(Config)) = Config
+
+InstalledRules: AbstractConfig -> (ConcreteConfig, ConcreteConfig)
+
+Subspace(OldConfig, NewConfig, InstalledRules):
+	OldTraces = traces(OldConfig)
+	NewTraces = traces(NewConfig)
+	
+	PlusTraces = NewTraces - OldTraces
+	MinusTraces = OldTraces - NewTraces
+
+	PlusRules = rules(PlusTraces)
+	MinusRules = rules(MinusTraces) - rules(NewTraces)	
+
+	EdgeRules, InternalRules, NewInstalledRules = mk_version(PlusRules, CurrentVersion + 1)
+	UninstallEdgeRules, UninstallInternalRules = InstalledRules(MinusRules)
+
+	install(InternalRules)
+	install(EdgeRules)
+	uninstall(UninstallEdgeRules)
+	wait_for_old_packets()
+	uninstall(UninstallInternalRules)
+
+	return (InstalledRules[MinusRules |-> nil])[NewInstalledRules]
+
+Extension:
+
+domain: AbstractConfig -> {LocatedPacket}
+range: AbstractConfig -> {LocatedPacket}
+Topology function T
+
+IsExtension(NewConfig, OldConfig):
+    for (port,pkt) in range(OldConfig):
+        new_port = T(port)
+        if (new_port,pkt) in domain(NewConfig)
+           return False
+
+    return True
+
+ExtensionUpdate(OldConfig, NewConfig, InstalledRules):
+     assert(IsExtension(NewConfig, OldConfig))
+     
+     NewRules = NewConfig - OldConfig
+     EdgeRules, InternalRules, NewInstalledRules = mk_version(NewRules, CurrentVersion + 1)
+     
+     install(InternalRules)
+     install(EdgeRules)
+
+     return InstalledRules[NewInstalledRules]
+     
+
+Extension in Formal framework:
+
+    IsExtension(NewS, OldS):
+        domain(NewS) /\ range(OldS) = {}
+
+    Extension(NewS, OldS):
+        Let us = [u_i,u_e] such that NewS = override(OldS, us)
+	and u_i, u_e are refinements of NewS
+	and for each (p,pkt) in domain of u_i, we have that p is an internal port
+	and for each (p,pkt) in domain of u_e, we have that p is an ingress port
+
+	If domain(NewS) /\ range(OldS) = {}, then us is an extension update from OldS to NewS

@@ -1,0 +1,7 @@
+
+2) Add config diagrams to show per-packet example
+3) Make a whack at discussion/future work section
+   - Feed from reviewer comments
+4) Quick polishing pass over assumptions/notation section
+5) Simplify per-flow section, maybe just show clone mechanism or bucket mechanism?
+6) In general, focus on making the examples clearer, and the whole thing more forward looking. In particular, we're trying to set a research agenda, so propose future avenues and questions to explore along these lines both for the mechanims we propose as well as other valid answers to the question

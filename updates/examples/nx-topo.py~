@@ -1,0 +1,120 @@
+from mininet.topo import Topo, Node
+import networkx as nx
+
+class MyTopo( Topo ):
+    "Simple topology example."
+
+
+    def __init__( self, enable_all = True ):
+        "Create custom topo."
+        
+        # Add default members to class.
+        super( MyTopo, self ).__init__()
+
+        ingressSwitch = 1
+        egressSwitch = 2
+        leftFilter = 10
+        middleFilter = 11
+        rightFilter = 12
+        host1 = 20
+        host2 = 21
+        host3 = 22
+        host4 = 23
+        server = 30
+        host1_ip = self.ip(host1)
+        host2_ip = self.ip(host2)
+        host3_ip = self.ip(host3)
+        host4_ip = self.ip(host4)
+        server_ip = self.ip(server)                        
+
+       
+        self.graph = nx.Graph()
+        self.port_to = {}
+        
+        # Set Node IDs for hosts and switches
+        self._switches = [ingressSwitch,
+                          egressSwitch,
+                          leftFilter,
+                          middleFilter,
+                          rightFilter]
+
+        self._edge_switches = [ingressSwitch,
+                               egressSwitch]
+        self._hosts = [host1,
+                       host2,                      
+                       host3,
+                       host4,
+                       server]
+        
+        self._host_location = {}
+        
+        # Add switches
+        for switch in self._switches:
+            self.graph.add_node( switch, switch=True )
+
+        # Add hosts
+        for host in self._hosts:
+            self.graph.add_node( self.ip(host), switch=False )
+            self.graph.node[self.ip(host)]['host']=host            
+
+
+            
+        for node in self.graph:
+            is_switch = self.graph.node[node]['switch']
+            if not is_switch:
+                node = self.graph.node[node]['host']
+                
+            self.add_node(node, Node(is_switch = is_switch))
+
+                         
+        # Add edges
+        self.graph.add_edge( host1_ip, ingressSwitch )
+        self.graph.add_edge( host2_ip, ingressSwitch )
+        self.graph.add_edge( host3_ip, ingressSwitch )
+        self.graph.add_edge( host4_ip, ingressSwitch )
+        self.graph.add_edge( ingressSwitch, leftFilter )
+        self.graph.add_edge( ingressSwitch, middleFilter )
+        self.graph.add_edge( ingressSwitch, rightFilter )
+        self.graph.add_edge( leftFilter, egressSwitch )
+        self.graph.add_edge( middleFilter, egressSwitch )
+        self.graph.add_edge( rightFilter, egressSwitch )
+	self.graph.add_edge( egressSwitch, server_ip )
+
+        # Track host locations. Assumes hosts are connected to one switch
+        for host in self._hosts:
+            host_ip = self.ip(host)
+            
+            switch = self.graph[host_ip].keys()[0]
+            self._host_location[host_ip] = switch
+        print self._host_location
+
+        # Construct Mininet representation
+        
+        for edge in self.graph.edges():
+            src,dst = edge
+            if not self.graph.node[src]['switch']:
+                m_src = self.graph.node[src]['host']
+            else:
+                m_src = src
+                
+            if not self.graph.node[dst]['switch']:
+                m_dst = self.graph.node[dst]['host']
+            else:
+                m_dst = dst
+                
+            self.add_edge(m_src,m_dst)
+            
+            src_port,dst_port = self.port(m_src,m_dst)
+
+            if not src in self.port_to:
+                self.port_to[src] = {}
+            if not dst in self.port_to:
+                self.port_to[dst] = {}
+                
+            self.port_to[src][dst] = src_port
+            self.port_to[dst][src] = dst_port
+            
+        # Consider all switches and hosts 'on'
+        self.enable_all()
+
+topos = { 'mytopo': ( lambda: MyTopo() ) } 

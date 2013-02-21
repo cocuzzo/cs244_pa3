@@ -1,0 +1,53 @@
+diff --git a/updates/update_lib.py b/updates/update_lib.py
+index 3780011..26d8a2e 100644
+--- a/updates/update_lib.py
++++ b/updates/update_lib.py
+@@ -624,6 +624,7 @@ from packet_path import PacketPath
+ def compute_flow_space(internal_policy, edge_policy, topology):
+     stack = []
+     edge_traces = []
++
+     for switch, config in edge_policy:
+         for rule in config:
+             ports = []
+@@ -674,18 +675,33 @@ def compute_flow_space(internal_policy, edge_policy, topology):
+     return edge_traces
+     
+ 
++def rules(traces):
++    policy = NetworkPolicy()
++    for trace in traces:
++        while(trace):
++            if not trace.switch in policy:
++                policy[trace.switch] = SwitchConfiguration()
++            policy[trace.switch].add_rule(trace.rule)
++            trace = trace.next
++    return policy
++
+ # Flow-space optimization: if only a subset of the space changes, then up the version on that subset and upgrade it independently, leaving the rest of the space unchanged. Couple this with general garbage collection and you have a full system. We find this update by computing precisely the network paths that change. We have to be careful though: changing and unchanging paths may share rules, so we need to be sure that we don't delete rules that get "upgraded" but are still needed by the old config.
+ 
+ def partial_per_packet_update(graph, new_policy):
+ 
+     new_internal_policy, new_edge_policy = mk_versioned_policies(new_policy, inst.current_version, graph)
+-    log.debug("new_internal_policy: " + str(new_internal_policy))
+-    log.debug("new_edge_policy: " + str(new_edge_policy))        
+-    old_paths = compute_flow_space(inst.current_internal_policy, inst.current_edge_policy, graph)
+-    new_paths = compute_flow_space(new_internal_policy, new_edge_policy, graph)
+-    plus_policy, minus_internal_policy, minus_edge_policy = construct_policy_from_diff_paths(old_paths, new_paths)
+-    log.debug("Plus policy: " + str(plus_policy))
+-    (plus_internal_policy, plus_edge_policy) = mk_versioned_policies(plus_policy, inst.current_version + 1, graph)
++    old_traces = compute_flow_space(inst.current_internal_policy, inst.current_edge_policy, graph)
++    new_traces = compute_flow_space(new_internal_policy, new_edge_policy, graph)
++-    old_paths = compute_flow_space(inst.current_internal_policy, inst.current_e-    new_paths = compute_flow_space(new_internal_policy, new_edge_policy, graph)-    plus_policy, minus_internal_policy, minus_edge_policy = construct_policy_fr-    log.debug("Plus policy: " + str(plus_policy))
++-    (plus_internal_policy, plus_edge_policy) = mk_versioned_policies(plus_polic+    old_traces = compute_flow_space(inst.current_internal_policy, inst.current_+    new_traces = compute_flow_space(new_internal_policy, new_edge_policy, graph+    add_traces = [trace for trace in new_traces if trace not in old_traces]
++    
++    add_traces = [trace for trace in new_traces if trace not in old_traces]
++    rem_traces = [trace for trace in old_traces if trace not in new_traces]
++
++    delete_policy = rules(rem_traces) - rules(new_traces)
++    install_policy = rules(add_traces)
++
++    internal_policy, edge_policy = mk_versioned_policies(new_policy, inst.current_version + 1, graph)
+ 
+     inst.stats.tally_update()
+     

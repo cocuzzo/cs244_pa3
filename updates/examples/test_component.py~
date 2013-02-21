@@ -1,0 +1,24 @@
+##
+# Routing Application
+# Frenetic <frenetic-hackers@lists.frenetic-lang.org>
+##
+
+import logging
+from collections import defaultdict
+from nox.lib.core import *
+from frenetic_net import *
+from routing_topo import *  
+from policy import *
+from update import *
+
+logger = logging.getLogger('nox.coreapps.examples.routing')
+
+inst = None
+
+def datapath_join(switch,stats):
+    inst.switches_up.add(switch)
+    if inst.switches_up == set(inst.topo.switches()):
+        go1()
+
+def ip(h):
+    return "10.0.0." + str(h)
