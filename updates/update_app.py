@@ -32,14 +32,17 @@ import os
 import sys
 from nox.lib.core import *
 from nox.lib.packet.ethernet import ethernet
+sys.path.append('/home/mininet/cs244_pa3/updates')
 import run
 
 # front-end initialization
 dirs = os.getenv("UPDATE_LIBS")
 run.import_directories(dirs.rsplit())
 
+print "Getting update application"
 update_application = run.get_function_by_name(os.getenv("UPDATE_MODULE"),
                                                   os.getenv("UPDATE_FUNCTION"))
+print "Getting got update application"
 
 initial_topology = run.get_function_by_name(os.getenv("UPDATE_TOPOLOGY_MODULE"),
                                                 os.getenv("UPDATE_TOPOLOGY"))

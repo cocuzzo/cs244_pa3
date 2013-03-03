@@ -29,6 +29,8 @@
 ################################################################################
 
 import string
+import sys
+sys.path.append("/home/mininet/nox-classic/build/src")
 import nox.lib.openflow as openflow
 import logging
 import weakref
@@ -36,8 +38,6 @@ from abc import ABCMeta
 
 log = logging.getLogger("frenetic.update.policy")
 
-
-import sys
 
 class Action(object):
     """ OpenFlow Action class.  """

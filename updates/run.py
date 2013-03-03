@@ -45,7 +45,8 @@ default_topology = "Topology"
 default_function = "main"
 default_args = []
 default_independent = False
-default_nox_path = "~/noxcore/build/src/nox_core"
+#default_nox_path = "~/noxcore/build/src/nox_core"
+default_nox_path = "~/nox-classic/build/src/nox_core"
 default_verbose = False 
 default_justnox = False
 default_nox_only = False
@@ -87,6 +88,7 @@ def import_directories(dirs):
 
 def get_function_by_name(module, function):
     """Imports module, and returns function"""
+    print "Getting function `%s` from module `%s`" % (function, module)
     module_object = __import__(module, globals(), locals(), [], -1)
     return getattr(module_object, function)
 
@@ -151,6 +153,7 @@ def execute(module,
         
     if experiment_mode:
         # yappi.start()
+        print "Running in experiment mode"
         nox = Process(target=run_nox)
         nox = NOX("c0", "UpdateApp")
         nox.start()
@@ -249,6 +252,7 @@ def main():
         exit(1)
 
     module = args[0]
+    print "Module = %s" % module
     args = args[1:]
     topology_module = options.topology_module
     topology = options.topology
