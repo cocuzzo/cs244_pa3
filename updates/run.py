@@ -32,6 +32,7 @@
 import optparse
 import os
 import sys
+sys.path.append('/home/ubuntu/nox-classic/build/src')
 from multiprocessing import Process, Queue
 from multiprocessing.connection import Client,Listener
 from mininet.log import lg, output

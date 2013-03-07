@@ -32,7 +32,7 @@ import os
 import sys
 from nox.lib.core import *
 from nox.lib.packet.ethernet import ethernet
-sys.path.append('/home/mininet/cs244_pa3/updates')
+sys.path.append('/home/ubuntu/cs244_pa3/updates')
 import run
 
 # front-end initialization
