@@ -72,7 +72,7 @@ def setup_env(module, topology_module, function, args, topology, dirs, experimen
         when using frenetic because NOX does weird things to python's
         expectations of where files will be.
     """
-    print "Setting up environment"
+    #print "Setting up environment"
     os.environ["UPDATE_MODULE"] = module
     os.environ["UPDATE_TOPOLOGY_MODULE"] = topology_module
     os.environ["UPDATE_FUNCTION"] = function
@@ -90,9 +90,9 @@ def import_directories(dirs):
 
 def get_function_by_name(module, function):
     """Imports module, and returns function"""
-    print "Getting function `%s` from module `%s`" % (function, module)
+    #print "Getting function `%s` from module `%s`" % (function, module)
     module_object = __import__(module, globals(), locals(), [], -1)
-    print "Finished importing function `%s` from module `%s`" % (function, module)
+    #print "Finished importing function `%s` from module `%s`" % (function, module)
     return getattr(module_object, function)
 
 def getControllerOutput():
@@ -101,14 +101,15 @@ def getControllerOutput():
 signal_address = ('localhost', 3366)
 
 def receive_signal(listener, q):
-    print "Received signal on ", listener, q
+    #print "Received signal on ", listener, q
     conn = listener.accept()
-    print "Listener accepted connection", conn
+    #print "Listener accepted connection", conn
     s = conn.recv()
-    print "Connection received signal", s
+    #print "Connection received signal", s
+    print "%s" % s
     q.put(s)
     listener.close()
-    print "Closing listener ", listener
+    #print "Closing listener ", listener
     return 
 
 def send_signal(s):
@@ -160,14 +161,14 @@ def execute(module,
         
     if experiment_mode:
         # yappi.start()
-        print "Running in experiment mode"
+        #print "Running in experiment mode"
         nox = Process(target=run_nox)
         nox = NOX("c0", "UpdateApp")
         nox.start()
         lg.setLogLevel('output')        
         output("*** Application started ***\n")
         wait.join(timeout)
-        print "Finished joining process"
+        #print "Finished joining process"
         msg = ""
         status = ""
         if wait.is_alive():
@@ -202,7 +203,7 @@ def execute(module,
         mininet = Mininet( topo=topo, switch=UserSwitch,
                            controller=lambda name: NOX(name, "UpdateApp"),
                            xterms=False, autoSetMacs=True, autoStaticArp=True )
-        print "Finished inititating Mininet"
+        #print "Finished inititating Mininet"
         mininet.start()
 #        lg.setLogLevel('output')
         lg.setLogLevel('info')
@@ -262,7 +263,10 @@ def main():
         exit(1)
 
     module = args[0]
-    print "Module = %s" % module
+    print "Topo = %s" % module
+    print "Nodes = %s" % options.nodes
+    print "Flavor = %s" % args[1]
+    print "Opts = %s" % args[2]
     args = args[1:]
     topology_module = options.topology_module
     topology = options.topology
