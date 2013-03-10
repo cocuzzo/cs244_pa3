@@ -32,8 +32,9 @@ import os
 import sys
 from nox.lib.core import *
 from nox.lib.packet.ethernet import ethernet
-sys.path.append('/home/ubuntu/nox-classic/build/src/')
-sys.path.append('/home/ubuntu/cs244_pa3/updates')
+UPDATES_DIR=os.environ["UPDATES_DIR"]
+sys.path.append(UPDATES_DIR)
+print "Adding UPDATES_DIR=%s" % UPDATES_DIR
 import run
 
 # front-end initialization
