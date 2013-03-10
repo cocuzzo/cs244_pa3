@@ -29,7 +29,9 @@
 # $Id$ #
 ################################################################################
 
+print "loading nxtopo"
 from nxtopo import *
+print "finished loading nxtopo"
 
 # 4 hosts on each edge switch
 # N/2 core switches
@@ -41,6 +43,7 @@ class FattreeTopology(NXTopo):
         super(FattreeTopology, self).__init__()
 
         # add switches
+        print "adding switches"
         numHosts = 6*numEdgeSwitches
         numCoreSwitches = numEdgeSwitches/2
         hosts = range(1, numHosts+1)
@@ -68,7 +71,10 @@ class FattreeTopology(NXTopo):
                 
         for h in hosts:
             self.add_link(h, firstSwitch + (h%numEdgeSwitches))
+  
+        print "finalizing topo"
         self.finalize()
+        print "finished finalizing"
 
 Topology = FattreeTopology
 # topos = { 'routing_fattree': ( lambda: Topology().mininet_topo() ) }

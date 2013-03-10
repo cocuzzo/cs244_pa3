@@ -32,6 +32,7 @@ import os
 import sys
 from nox.lib.core import *
 from nox.lib.packet.ethernet import ethernet
+sys.path.append('/home/ubuntu/nox-classic/build/src/')
 sys.path.append('/home/ubuntu/cs244_pa3/updates')
 import run
 

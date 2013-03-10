@@ -46,7 +46,7 @@ import sys
 # main() function
 default_function = "main" 
 default_independent = False
-default_nox_path = "~/noxcore/build/src/nox_core"
+default_nox_path = "/home/ubuntu/nox-classic/build/src/nox_core"
 default_verbose = False 
 default_justnox = False
 default_topo = "test_topo"

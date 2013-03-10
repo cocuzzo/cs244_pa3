@@ -104,6 +104,7 @@ def all_done():
 
 def main_run(update, flavor, ext, subspace, island, size):
     graph = Topology(size)
+    print "fattree: main_run"
     version2_cont = all_done
     version1_cont = mk_cb(lambda:run_version(2, version2_cont, update, flavor, ext, subspace, island, graph))
     version0_cont = mk_cb(lambda:run_version(1, version1_cont, update, flavor, ext, subspace, island, graph))
@@ -136,6 +137,10 @@ def main_flows(size, flavor, opt):
     main_run(per_flow, int(flavor) - 1, ext, subspace, island, size)
 
 def main(size, flavor, opt):
+  
+    f = open("fout.txt", 'w')
+    f.write("hello running")
+    print "main of fattree"
     if opt == "all":
         ext = True
         subspace = True
