@@ -29,6 +29,8 @@
 ################################################################################
 
 from collections import defaultdict
+import sys, os
+sys.path.append(os.environ['NOX_CORE_DIR'])
 from nox.lib.core import UINT32_MAX, openflow
 from policy import *
 import logging

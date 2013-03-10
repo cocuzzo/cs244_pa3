@@ -15,12 +15,7 @@ ctrlc() {
 
 trap ctrlc SIGINT
 
-export HOME_DIR=/home/ubuntu
-export NOX_CORE_DIR=$HOME_DIR/nox-classic/build/src 
-
-# Add shared objects for SWIG-code
-export LD_PRELOAD=$HOME_DIR/nox-classic/build/src/nox/coreapps/pyrt/.libs/pyrt.so:$HOME_DIR/nox-classic/build/src/lib/.libs/libnoxcore.so:$HOME_DIR/nox-classic/build/src/builtin/.libs/libbuiltin.so:/usr/lib/libboost_filesystem.so 
-export UPDATES_DIR=`pwd`
+source config.sh
 
 start=`date`
 exptid=`date +%b%d-%H%M`
@@ -28,7 +23,7 @@ rootdir=cupdates-results-$exptid
 
 mn -c
 
-for hosts in 96 ; do
+for hosts in 12 ; do
 
     dir=$rootdir
     mkdir -vp $dir
