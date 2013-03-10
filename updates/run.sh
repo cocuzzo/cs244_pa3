@@ -21,17 +21,27 @@ export NOX_CORE_DIR=$HOME_DIR/nox-classic/build/src
 # Add shared objects for SWIG-code
 export LD_PRELOAD=$HOME_DIR/nox-classic/build/src/nox/coreapps/pyrt/.libs/pyrt.so:$HOME_DIR/nox-classic/build/src/lib/.libs/libnoxcore.so:$HOME_DIR/nox-classic/build/src/builtin/.libs/libbuiltin.so:/usr/lib/libboost_filesystem.so 
 
+#NOX_CORE_DIR=/home/ubuntu/nox-classic/build/src 
+#LD_PRELOAD=/home/ubuntu/nox-classic/build/src/nox/coreapps/pyrt/.libs/pyrt.so:
+#/home/ubuntu/nox-classic/build/src/lib/.libs/libnoxcore.so:
+#/home/ubuntu/nox-classic/build/src/builtin/.libs/libbuiltin.so:
+#/usr/lib/libboost_filesystem.so
+
 start=`date`
-exptid=`date +%b%d-%H:%M`
+exptid=`date +%b%d-%H%M`
 rootdir=cupdates-$exptid
 
 for run in {1..1}; do
-	for num_hosts in 1 5 ; do
+	for num_hosts in 4 ; do
 		dir=$rootdir/nf$num_hosts-r$run
+        mkdir -vp $dir
 
-		cmd="python run.py -n $num_hosts -m fattree fattree 1 none > $dir/results.txt"
+        mn -c
+        date
+		cmd="./run.py -v -n $num_hosts -m waxman waxman 1 none"
 	    echo $cmd
-	    $cmd
+	    $cmd > $dir/result.txt
+        date
 
 	done
     cat $rootdir/*/result.txt | sort -n -k 1
@@ -39,4 +49,3 @@ for run in {1..1}; do
     echo "Started at" $start
     echo "Ended at" `date`
 done
-
