@@ -33,6 +33,7 @@ import optparse
 import os
 import sys
 sys.path.append('%s/nox-classic/build/src' % os.environ['NOX_CORE_DIR'])
+#print "Adding path '%s/nox-classic/build/src'" % os.environ['NOX_CORE_DIR']
 from multiprocessing import Process, Queue
 from multiprocessing.connection import Client,Listener
 from mininet.log import lg, output

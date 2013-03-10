@@ -30,7 +30,8 @@
 
 import string
 import sys
-sys.path.append("/home/mininet/nox-classic/build/src")
+import os
+sys.path.append(os.environ['NOX_CORE_DIR'])
 import nox.lib.openflow as openflow
 import logging
 import weakref

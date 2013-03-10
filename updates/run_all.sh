@@ -20,6 +20,7 @@ export NOX_CORE_DIR=$HOME_DIR/nox-classic/build/src
 
 # Add shared objects for SWIG-code
 export LD_PRELOAD=$HOME_DIR/nox-classic/build/src/nox/coreapps/pyrt/.libs/pyrt.so:$HOME_DIR/nox-classic/build/src/lib/.libs/libnoxcore.so:$HOME_DIR/nox-classic/build/src/builtin/.libs/libbuiltin.so:/usr/lib/libboost_filesystem.so 
+export UPDATES_DIR=`pwd`
 
 start=`date`
 exptid=`date +%b%d-%H%M`
@@ -29,7 +30,7 @@ mn -c
 
 for hosts in 96 ; do
 
-    dir=$rootdir/h$hosts
+    dir=$rootdir
     mkdir -vp $dir
 
     for topo in fattree waxman smallworld ; do
