@@ -27,13 +27,13 @@ rootdir=cupdates-results-$exptid
 
 mn -c
 
-for hosts in 24 ; do
+for hosts in 96 ; do
 
     dir=$rootdir/h$hosts
     mkdir -vp $dir
 
     for topo in fattree waxman smallworld ; do
-        for flavor in 1 2 3 ; do
+        for flavor in 1 2 3; do
            
             [ "$topo" = "fattree" ] && let "switches=$hosts/6"
             [ "$topo" = "waxman" ] && let "switches=$hosts/4" 
