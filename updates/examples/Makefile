@@ -37,7 +37,7 @@ SMALLWORLD_SIZE=6
 FATTREE_SIZE=32
 WAXMAN_SIZE=48
 RUN=../run.py
-HOME_DIR=/home/mininet
+HOME_DIR=${HOME}
 export NOX_CORE_DIR=${HOME_DIR}/nox-classic/build/src
 export NOX_CORE_DIR=${HOME_DIR}/nox-classic/build/src
 export LD_PRELOAD=${HOME_DIR}/nox-classic/build/src/nox/coreapps/pyrt/.libs/pyrt.so:${HOME_DIR}/nox-classic/build/src/lib/.libs/libnoxcore.so:${HOME_DIR}/nox-classic/build/src/builtin/.libs/libbuiltin.so:/usr/lib/libboost_filesystem.so
@@ -57,7 +57,7 @@ smallworld:
 	for flavor in ${FLAVORS}; do \
 	    for opt in ${OPTS}; do \
 		echo "routing SmallWorldTopology $${flavor} $${opt}"; \
-		sudo -E ${RUN} -n ${SMALLWORLD_SIZE} smallworld $$flavor $$opt; \
+		sudo -E ${RUN} -e -n ${SMALLWORLD_SIZE} smallworld $$flavor $$opt; \
 	    done ; \
 	done
 
