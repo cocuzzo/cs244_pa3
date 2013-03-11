@@ -32,10 +32,17 @@ NAIVE=main_naive
 FLAVORS=1 2 3
 OPTS=none subspace
 TOPOLOGIES=FattreeTopology WaxmanTopology SmallWorldTopology
-SMALLWORLD_SIZE=48
+#SMALLWORLD_SIZE=48
+SMALLWORLD_SIZE=6
 FATTREE_SIZE=32
 WAXMAN_SIZE=48
 RUN=../run.py
+HOME_DIR=/home/mininet
+export NOX_CORE_DIR=${HOME_DIR}/nox-classic/build/src
+export NOX_CORE_DIR=${HOME_DIR}/nox-classic/build/src
+export LD_PRELOAD=${HOME_DIR}/nox-classic/build/src/nox/coreapps/pyrt/.libs/pyrt.so:${HOME_DIR}/nox-classic/build/src/lib/.libs/libnoxcore.so:${HOME_DIR}/nox-classic/build/src/builtin/.libs/libbuiltin.so:/usr/lib/libboost_filesystem.so
+
+export UPDATES_DIR=$(shell pwd)/..
 
 .PHONY: clean
 
@@ -46,10 +53,11 @@ routing: fattree waxman smallworld
 multicast: fattree_multicast waxman_multicast smallworld_multicast
 
 smallworld:
+	@echo "UPDATES_DIR = " $(UPDATES_DIR)
 	for flavor in ${FLAVORS}; do \
 	    for opt in ${OPTS}; do \
 		echo "routing SmallWorldTopology $${flavor} $${opt}"; \
-		sudo ${RUN} -e -n ${SMALLWORLD_SIZE} smallworld $$flavor $$opt; \
+		sudo -E ${RUN} -n ${SMALLWORLD_SIZE} smallworld $$flavor $$opt; \
 	    done ; \
 	done
 
@@ -57,7 +65,7 @@ fattree:
 	for flavor in ${FLAVORS}; do \
 	    for opt in ${OPTS}; do \
 		echo "routing FattreeTopology $${flavor} $${opt}"; \
-		sudo ${RUN} -e -n ${FATTREE_SIZE} fattree $$flavor $$opt; \
+		sudo -E ${RUN} -e -n ${FATTREE_SIZE} fattree $$flavor $$opt; \
 	    done ; \
 	done
 
@@ -65,7 +73,7 @@ waxman:
 	for flavor in ${FLAVORS}; do \
 	    for opt in ${OPTS}; do \
 		echo "routing WaxmanTopology $${flavor} $${opt}"; \
-		sudo ${RUN} -e -n ${WAXMAN_SIZE} waxman $$flavor $$opt; \
+		sudo -E ${RUN} -e -n ${WAXMAN_SIZE} waxman $$flavor $$opt; \
 		done ; \
 	    done ; \
 	done
@@ -74,7 +82,7 @@ smallworld_multicast:
 	for flavor in ${FLAVORS}; do \
 	    for opt in ${OPTS}; do \
 		echo "multicast SmallWorldTopology $${flavor} $${opt}"; \
-		sudo ${RUN} -e -n ${SMALLWORLD_SIZE} smallworld_multicast $$flavor $$opt; \
+		sudo -E ${RUN} -e -n ${SMALLWORLD_SIZE} smallworld_multicast $$flavor $$opt; \
 	    done ; \
 	done
 
@@ -82,7 +90,7 @@ fattree_multicast:
 	for flavor in ${FLAVORS}; do \
 	    for opt in ${OPTS}; do \
 		echo "multicast FattreeTopology $${flavor} $${opt}"; \
-		sudo ${RUN} -e -n ${FATTREE_SIZE} fattree_multicast $$flavor $$opt; \
+		sudo -E ${RUN} -e -n ${FATTREE_SIZE} fattree_multicast $$flavor $$opt; \
 	    done ; \
 	done
 
@@ -90,7 +98,7 @@ waxman_multicast:
 	for flavor in ${FLAVORS}; do \
 	    for opt in ${OPTS}; do \
 		echo "multicast WaxmanTopology $${flavor} $${opt}"; \
-		sudo ${RUN} -e -n ${WAXMAN_SIZE} waxman_multicast $$flavor $$opt; \
+		sudo -E ${RUN} -e -n ${WAXMAN_SIZE} waxman_multicast $$flavor $$opt; \
 		done ; \
 	    done ; \
 	done
