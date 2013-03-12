@@ -57,6 +57,7 @@ default_timeout = None
 default_experiment_mode = False
 default_nodes = 4
 mininet = None
+time_elapsed = 0.0
 
 def fetch_subdirs(directory = os.getcwd()):
     """Returns a list including this directory and all of its subdirectories"""
@@ -212,9 +213,11 @@ def execute(module,
 #        lg.setLogLevel('output')
         lg.setLogLevel('info')
         output("*** Mininet Up ***\n")
+        from time import time
         output("*** Application started ***\n")
         if cli:
             CLI(mininet)
+        start_time = time()
         wait.join(timeout)
         msg = ""
         status = ""
@@ -271,6 +274,7 @@ def main():
     print "Nodes = %s" % options.nodes
     print "Flavor = %s" % args[1]
     print "Opts = %s" % args[2]
+
     args = args[1:]
     topology_module = options.topology_module
     topology = options.topology

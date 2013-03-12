@@ -30,6 +30,7 @@
 
 from collections import defaultdict
 import sys, os
+from time import time
 sys.path.append(os.environ['NOX_CORE_DIR'])
 from nox.lib.core import UINT32_MAX, openflow
 from policy import *
@@ -105,6 +106,7 @@ class UpdateStats:
     
     def __init__(self):
         self.updates = 0
+        self.start_time = time()
         self.installs = defaultdict(lambda:0)
         self.modifies = defaultdict(lambda:0)
         self.deletes = defaultdict(lambda:0)
@@ -172,12 +174,13 @@ class UpdateStats:
             o = self.max_overhead[switch]
             s += "s%d\t%d\t%d\t%d\t%d\t%d%%\n" % (switch, i, d, m, i+d+m, 100*o)
         s += "--------------------------------------------\n"
-        s += "total\t%d\t%d\t%d\t%d\t%d%%\n" % \
+        s += "total\t%d\t%d\t%d\t%d\t%d%%\t%.4f\n" % \
              (self.all_installs(), 
               self.all_deletes(), 
               self.all_modifies(),
               self.all_operations(),
-              100*self.all_overheads())
+              100*self.all_overheads(),
+              time() - self.start_time)
         return s
 
 ##########################################

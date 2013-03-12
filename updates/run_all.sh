@@ -23,7 +23,19 @@ rootdir=cupdates-results-$exptid
 
 mn -c
 
-for nodes in 24 36 48 60 72 84 96 108 120 132 144 156 168 180 192; do
+EXPERIMENT=0
+# For experiment rode (can run quickly)
+if [ $EXPERIMENT -ne 0 ] ;
+    then
+    echo "Running in experiment mode."
+    range="24 36 48 60 72 84 96 108 120 132 144 156 168 180 192";
+else
+    # For Mininet rode (full setup)
+    echo "Running in non-experiment mode."
+    range="24 36 48 60 72";
+fi
+
+for nodes in $(echo $range) ; do
 
     dir=$rootdir/n$nodes/
     mkdir -vp $dir
@@ -40,7 +52,15 @@ for nodes in 24 36 48 60 72 84 96 108 120 132 144 156 168 180 192; do
             [ "$topo" = "smallworld" ] && let "switches=$nodes/4"
 
             mn -c 2> /dev/null
-            cmd="./run.py -e -n $switches -m $topo $topo $flavor none"
+
+            if [ $EXPERIMENT -ne 0 ] ; then
+              # Experiment mode
+              cmd="./run.py -e -n $switches -m $topo $topo $flavor none"
+            else
+              # Non-experiment mode
+              cmd="./run.py -n $switches -m $topo $topo $flavor none"
+            fi
+
             echo $cmd
             $cmd > $dir/cu-n$nodes-t$topo-f$flavor.txt
             chmod -R +w $dir/cu-n$nodes-t$topo-f$flavor.txt

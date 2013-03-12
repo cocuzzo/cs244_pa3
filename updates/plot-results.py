@@ -86,7 +86,7 @@ def parse_file(filename, results):
     
     opts = lines[n].split('=')[1].strip()
     n += 1
-      
+    
     if 'multicast' in topo:
       rule = 'multicast'
     else:
@@ -104,15 +104,26 @@ def parse_file(filename, results):
     totals = lines[n].split()
     n += 1
   
-    overhead = int(totals[-1][:-1])
-    total = int(totals[-2])
+    time = None
+    if '%' in totals[-1]:
+      # No timing
+      overhead = int(totals[-1][:-1])
+      total = int(totals[-2])
+    
+    else:
+      # With times
+      time = float(totals[-1])
+      overhead = int(totals[-2][:-1])
+      total = int(totals[-3])
+      
+
     if graph_type not in results:
       results[graph_type] = {}
     
     if topo not in results[graph_type]:
       results[graph_type][topo] = []
-    
-    results[graph_type][topo].append((hosts, total, overhead))
+
+    results[graph_type][topo].append((hosts, total, overhead, time))
 
 results = {}
 for f in glob.glob("%s/*/*.txt" % args.dir) + \
@@ -126,28 +137,28 @@ if nfiles == 0:
     print "Result files not found.   Did you pass the directory correctly?"
     sys.exit(0)
 
-# Plot data
+# Plot # of ops
 for graph_type, topologies in results.items():
-  
   
     plt.figure()
     for topo, data in topologies.items():
       
-      A_ops = array([(d[0], d[1]) for d in data],
+      A = array([(d[0], d[1]) for d in data],
                     dtype=[('x',int), ('y',int)])
-      A_ops.sort(order='x')
+      A.sort(order='x')
       
-      nodes = A_ops['x']
-      ops = A_ops['y']
-
-      print "Plotting %s %s, #=%d" % (graph_type, topo, len(nodes))
+      X = A['x']
+      Y = A['y']
       
-      fit = polyfit(nodes,ops,2)
+      print "Plotting %s %s, #=%d" % (graph_type, topo, len(X))
+      
+      fit = polyfit(X,Y,2)
       fit_fn = poly1d(fit) # fit_fn is now a function which takes in x and returns an estimate for y
-
-      plt.plot(nodes, ops, 'o', label=topo)
-      plt.plot(nodes, fit_fn(nodes), '-', label='topo-polyfit')
-      plt.title("%s" % graph_type.replace('_', ' '))
+      
+      plt.plot(X, Y, 'o', label=topo)
+      plt.plot(X, fit_fn(X), '-', label='topo-polyfit')
+      plt.title("Update Ops for %s" %
+                graph_type.replace('_', ' ').replace('none',''))
 
     plt.legend(loc='upper left')
     plt.ylabel("# of Update Messages")
@@ -155,7 +166,41 @@ for graph_type, topologies in results.items():
 
     if args.out:
         print "Saving to %s" % args.out
-        fname = "%s" % graph_type
+        fname = "ops_%s" % graph_type
         plt.savefig(os.path.join(args.out, fname))
     else:
         plt.show()
+
+# Plot amount of time
+for graph_type, topologies in results.items():
+  
+  plt.figure()
+  for topo, data in topologies.items():
+    
+    A = array([(d[0], d[3]) for d in data],
+              dtype=[('x',int), ('y',float)])
+    A.sort(order='x')
+    
+    X = A['x']
+    Y = A['y']
+    
+    print "Plotting %s %s, #=%d" % (graph_type, topo, len(X))
+    
+    fit = polyfit(X,Y,2)
+    fit_fn = poly1d(fit) # fit_fn is now a function which takes in x and returns an estimate for y
+    
+    plt.plot(X, Y, 'o', label=topo)
+    plt.plot(X, fit_fn(X), '-', label='topo-polyfit')
+    plt.title("Update Time for %s" % graph_type.replace('_', ' '))
+  
+  plt.legend(loc='upper left')
+  plt.ylabel("Time (sec)")
+  plt.xlabel("Total #Hosts")
+  
+  if args.out:
+    print "Saving to %s" % args.out
+    fname = "time_%s" % graph_type
+    plt.savefig(os.path.join(args.out, fname))
+  else:
+    plt.show()
+
