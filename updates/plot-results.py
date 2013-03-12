@@ -5,7 +5,11 @@ import glob
 import os
 import sys
 from collections import defaultdict
+import matplotlib
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
+
 from pylab import *
 import argparse
 
@@ -20,11 +24,9 @@ parser.add_argument('--dir',
                     help="Directory from which outputs of the sweep are read.",
                     required=True)
 
+RESULTS_DIR = 'results'
 args = parser.parse_args()
-data = defaultdict(list)
-nedata = defaultdict(list)
-RTT = 85.0 # ms
-BW = 62.5 # Mbps
+
 nruns = 10 # Number of runs for your experiment
 nflows = 800
 nfiles = 0
@@ -54,81 +56,106 @@ def nodes_to_hosts(nodes, topo):
     print "Unknown topo: %s" % topo
 
 
-# Parse data
-def parse_data(filename, results):
-    '''
-      {flavor: {'fattree': [[nodes, total, overhead], ...],
-                'waxman':  [[nodes, total, overhead], ...]
-      },
-      ...,
-      }
+def parse_file(filename, results):
+  '''
+    {flavor: {'fattree': [[nodes, total, overhead], ...],
+    'waxman':  [[nodes, total, overhead], ...]
+    },
+    ...,
+    }
     '''
 
-    lines = open(filename).read().split("\n")
-    topo = lines[0].split('=')[1].strip()
-    nodes = int(lines[1].split('=')[1].strip())
-    flavor = lines[2].split('=')[1].strip()
-  
+  lines = open(filename).read().split("\n")
+
+  n = 0
+  while n < len(lines)-4:
+    
+    # Search for the phrase "Update Statistics"
+    if -1 == lines[n+4].find('Update Statistics'):
+      n += 1
+      continue
+    
+    topo = lines[n].split('=')[1].strip()
+    n += 1
+    
+    nodes = int(lines[n].split('=')[1].strip())
+    n += 1
+    
+    flavor = lines[n].split('=')[1].strip()
+    n += 1
+    
+    opts = lines[n].split('=')[1].strip()
+    n += 1
+      
     if 'multicast' in topo:
-      flavor = 'multicast_%s' % flavor
+      rule = 'multicast'
+    else:
+      rule = 'routing'
+    
+    graph_type = '%s_%s_%s' % (rule, flavor, opts)
   
-
-    opts = lines[3].split('=')[1].strip()
-    lines = lines[3:]
     print topo, nodes, flavor, opts
   
     hosts = nodes_to_hosts(nodes, topo)
 
-    for line in lines:
-      if 0 == line.find('total'):
-
-        totals = line.split()
-        overhead = int(totals[-1][:-1])
-        total = int(totals[-2])
-        if flavor not in results:
-          results[flavor] = {}
-      
-        if topo not in results[flavor]:
-          results[flavor][topo] = []
-
-        results[flavor][topo].append((hosts, total, overhead))
+    while 0 != lines[n].find('total'):
+      n += 1
+    
+    totals = lines[n].split()
+    n += 1
+  
+    overhead = int(totals[-1][:-1])
+    total = int(totals[-2])
+    if graph_type not in results:
+      results[graph_type] = {}
+    
+    if topo not in results[graph_type]:
+      results[graph_type][topo] = []
+    
+    results[graph_type][topo].append((hosts, total, overhead))
 
 results = {}
-for f in glob.glob("%s/*/*.txt" % args.dir):
-    print "Parsing %s" % f
-    parse_data(f, results)
-    print "results = ", results
-    nfiles += 1
+for f in glob.glob("%s/*/*.txt" % args.dir) + \
+         glob.glob("%s/*.txt" % RESULTS_DIR):
+  print "Parsing %s" % f
+  parse_file(f, results)
+#    print "results = ", resultss
+  nfiles += 1
 
 if nfiles == 0:
     print "Result files not found.   Did you pass the directory correctly?"
     sys.exit(0)
 
 # Plot data
-for flavor, topologies in results.items():
-    plt.figure()
+for graph_type, topologies in results.items():
   
+  
+    plt.figure()
     for topo, data in topologies.items():
       
-      nodes = [d[0] for d in data]
-      totals = [d[1] for d in data]
-      overheads = [d[2] for d in data]
-
-      print "Plotting, nodes = %s, totals = %s" % (nodes, totals)
+      A_ops = array([(d[0], d[1]) for d in data],
+                    dtype=[('x',int), ('y',int)])
+      A_ops.sort(order='x')
       
-      fit = polyfit(nodes,totals,1)
+      nodes = A_ops['x']
+      ops = A_ops['y']
+
+      print "Plotting %s %s, #=%d" % (graph_type, topo, len(nodes))
+      
+      fit = polyfit(nodes,ops,2)
       fit_fn = poly1d(fit) # fit_fn is now a function which takes in x and returns an estimate for y
 
-      plt.plot(nodes, totals, 'o', nodes, fit_fn(nodes), '-', label=topo)
-      plt.title("Flavor %s" % flavor)
+      plt.plot(nodes, ops, 'o', label=topo)
+      plt.plot(nodes, fit_fn(nodes), '-', label='topo-polyfit')
+      plt.title("%s" % graph_type.replace('_', ' '))
 
-    plt.legend()
+    plt.legend(loc='upper left')
     plt.ylabel("# of Update Messages")
     plt.xlabel("Total #Hosts")
 
     if args.out:
         print "Saving to %s" % args.out
-        fname = "flavor_%s" % flavor
+        fname = "%s" % graph_type
         plt.savefig(os.path.join(args.out, fname))
     else:
         plt.show()
