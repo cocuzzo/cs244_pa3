@@ -23,22 +23,23 @@ rootdir=cupdates-results-$exptid
 
 mn -c
 
-for hosts in 12 ; do
+for nodes in 24 36 ; do
 
-    dir=$rootdir
+    dir=$rootdir/n$nodes/
     mkdir -vp $dir
 
-    for topo in fattree waxman smallworld ; do
+    for topo in fattree waxman smallworld fattree_multicast \
+                waxman_multicast smallworld_multicast ; do
         for flavor in 1 2 3; do
            
-            [ "$topo" = "fattree" ] && let "switches=$hosts/6"
-            [ "$topo" = "waxman" ] && let "switches=$hosts/4" 
-            [ "$topo" = "smallworld" ] && let "switches=$hosts/4"
+            [ "$topo" = "fattree" ] && let "switches=$nodes/6"
+            [ "$topo" = "waxman" ] && let "switches=$nodes/4" 
+            [ "$topo" = "smallworld" ] && let "switches=$nodes/4"
 
-            cmd="./run.py -n $switches -m $topo $topo $flavor none"
+            mn -c 2> /dev/null
+            cmd="./run.py -e -n $switches -m $topo $topo $flavor none"
             echo $cmd
-            $cmd > $dir/cu-h$hosts-t$topo-f$flavor.txt       
-            mn -c
+            $cmd > $dir/cu-n$nodes-t$topo-f$flavor.txt
 
         done
         echo "Started at" $start

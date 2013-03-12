@@ -83,6 +83,9 @@ def setup_env(module, topology_module, function, args, topology, dirs, experimen
     if experiment_mode:
         os.environ["UPDATE_EXPERIMENT_MODE"] = str(experiment_mode)
     os.environ["UPDATE_NUM_NODES"] = str(num_nodes)
+#    for key,value in os.environ.items():
+#        if "UPDATE" in key or "NOX" in key:
+#            print "%s: %s" % (key, value)
 
 def import_directories(dirs):
     """Prepends all the directories in dirs onto sys.path, causing python to

@@ -1,4 +1,3 @@
-*~
 *.py[cod]
 
 # C extensions
@@ -27,10 +26,33 @@ pip-log.txt
 .tox
 nosetests.xml
 
-# Translations
-*.mo
+# Generated
+*.dSYM/
+*.o
+*.pyc
+*.log
+*.graph
+*.out
+*.o
+*.pyc   
 
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+# Exclude the build directory
+build/*
+ 
+# Exclude temp nibs and swap files
+*~.nib
+*.swp
+ 
+# Exclude OS X folder attributes
+updates/.DS_Store
+ 
+# Exclude user-specific XCode 3 and 4 files
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.xcuserstate
+*.pbxuser
+*.xcworkspace
+xcuserdata
