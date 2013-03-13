@@ -364,6 +364,13 @@ if args.type == 'table':
 
       for tab_update in ['Hosts', 'Routes', 'Both']:
 
+	# Check if at least one point
+	if len(A[(A['application'] == tab_application) & \
+                      (A['topology'] == topo) & \
+                      (A['update'] == tab_update) & \
+                      (A['opts'] == 'none')]) < 1:
+	  continue
+
         if tab_application == 'multicast':
           topo = '%s_%s' % (tab_topo, tab_application)
         else:

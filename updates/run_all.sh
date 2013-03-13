@@ -48,7 +48,8 @@ for nodes in $(echo $range) ; do
 
       for opts in none subspace ; do
 
-        for flavor in 1 2 3; do
+        #for flavor in 1 2 3; do
+        for flavor in 1 ; do
 
           [ "$topo" = "fattree" ] && let "switches=$nodes/6"
           [ "$topo" = "waxman" ] && let "switches=$nodes/4"
@@ -65,8 +66,8 @@ for nodes in $(echo $range) ; do
           fi
 
           echo $cmd
-          $cmd > $dir/cu-n$nodes-t$topo-f$flavor.txt
-          chmod -R +w $dir/cu-n$nodes-t$topo-f$flavor.txt
+          $cmd > $dir/cu-n$nodes-t$topo-f$flavor-$opts.txt
+          chmod -R +w $dir/cu-n$nodes-t$topo-f$flavor-$opts.txt
 
           echo "Started at" $start
           echo "Ended at" `date`
