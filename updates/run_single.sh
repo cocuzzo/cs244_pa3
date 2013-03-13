@@ -42,7 +42,7 @@ for nodes in $(echo $range) ; do
     dir=$rootdir/n$nodes/
     mkdir -vp $dir
 
-    for topo in fattree waxman smallworld
+    for topo in fattree waxman smallworld \
                 fattree_multicast waxman_multicast smallworld_multicast
       do
 
@@ -65,8 +65,8 @@ for nodes in $(echo $range) ; do
           fi
 
           echo $cmd
-          $cmd > $dir/cu-n$nodes-t$topo-f$flavor.txt
-          chmod -R +w $dir/cu-n$nodes-t$topo-f$flavor.txt
+          $cmd > $dir/cu-n$nodes-t$topo-f$flavor-$opts.txt
+          chmod -R +w $dir/cu-n$nodes-t$topo-f$flavor-$opts.txt
 
           echo "Started at" $start
           echo "Ended at" `date`
