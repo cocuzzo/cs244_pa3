@@ -144,7 +144,6 @@ for f in glob.glob("%s/*/*.txt" % args.dir) + \
   print "Parsing %s" % f
   parse_file(f, results)
            
-#    print "results = ", resultss
   nfiles += 1
 
 if nfiles == 0:
@@ -191,7 +190,7 @@ if args.type == 'ops':
         plt.plot(X_plot, fit_fn(X_plot), '-', label='%s-polyfit (r^2=%.3f)' % \
            (topo, r_squared(fit_fn, X, Y)))
         application = graph_type.split('_')[0]
-        fname = flavor_name(graph_type.split('_')[-1])
+        fname = flavor_name(int(graph_type.split('_')[1]))
         plt.title("Total Ops to update %s/%s" %
                   (application, fname))
 
@@ -199,6 +198,7 @@ if args.type == 'ops':
         plt.legend(loc='upper left')
         plt.ylabel("# of Update Messages")
         plt.xlabel("Number of Hosts")
+        plt.ylim(0, max(Y))
 
         if args.out:
             print "Saving to %s" % args.out
@@ -250,6 +250,8 @@ if args.type == 'time':
       plt.legend(loc='upper left')
       plt.ylabel("Time (sec)")
       plt.xlabel("Number of Hosts")
+      plt.ylim(0, max(Y))
+
 
       if args.out:
         fname = os.path.join(args.out, "time_%s" % graph_type)
@@ -267,9 +269,7 @@ if args.type == 'ops_per_time':
     has_plot = False
     for topo, data in topologies.items():
       
-      print "data = ", data
       data = [d for d in data if d[3]]
-      print "data parsed = ", data
       
       A = array([(d[0], d[1]/d[3]) for d in data],
                 dtype=[('x',int), ('y',float)])
@@ -278,7 +278,7 @@ if args.type == 'ops_per_time':
       X = A['x']
       Y = A['y']
       
-      if len(X) < 3:
+      if len(X) < 2:
         print "Skipping %s %s, #=%d" % (graph_type, topo, len(X))
         continue
       
@@ -288,7 +288,6 @@ if args.type == 'ops_per_time':
     
       
       fit = polyfit(X,Y,1)
-      print "fit = ", fit
       fit_fn = poly1d(fit) # fit_fn is now a function which takes in x and returns an estimate for y
       
       plt.plot(X, Y, 'o', label=topo)
@@ -303,6 +302,8 @@ if args.type == 'ops_per_time':
       plt.legend(loc='lower right')
       plt.ylabel("Ops per sec")
       plt.xlabel("Number of Hosts")
+      plt.ylim(0, max(Y))
+      
       
       if args.out:
         fname = os.path.join(args.out, "ops_per_time_%s" % graph_type)
@@ -389,13 +390,6 @@ if args.type == 'table':
 
     f.write("</table>\n")
     f.write("<p>\n")
-
-#          A.sort(order='hosts')
-
-#          print "graph_type = %s, topo = %s, flavor = %d, opts = %s, vals = %s" % (graph_type, topo, int(flavor), opts, vals)
-#    #      print "graph_type.split('-') = ", graph_type.split('_')
-#
-
 
 
 
