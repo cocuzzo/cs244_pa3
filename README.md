@@ -30,7 +30,11 @@ This work is part of [CS244 Advanced Topics in Networking](http://www.stanford.e
 
 5. Navigate into `cs244_pa3/updates`.
 
-6. Run:
+6. To reproduce the table run for 192 hosts (5 minutes):
+
+		sudo ./run_single.sh
+
+7. To reproduce the plots run:
 
 		sudo ./run_all.sh
 		

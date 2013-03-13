@@ -336,7 +336,9 @@ if args.type == 'table':
                    ('update',np.str,16), ('opts',np.str,16), ('hosts',int), \
                    ('ops',int), ('overhead',int), ('time',float)])
 
-  A = A[A['hosts'] == 192]
+  max_hosts = max(A['hosts'])
+  print "max_hosts =", max_hosts
+  A = A[A['hosts'] == max_hosts]
 
   for tab_application in ['routing', 'multicast']:
     
@@ -370,11 +372,6 @@ if args.type == 'table':
                       (A['topology'] == topo) & \
                       (A['update'] == tab_update) & \
                       (A['opts'] == 'none'))][0]
-
-        vals_opt = A[((A['application'] == tab_application) & \
-                      (A['topology'] == topo) & \
-                      (A['update'] == tab_update) & \
-                      (A['opts'] == 'subspace'))][0]
 
         f.write('<tr>')
         f.write('<td>%s</td>' % tab_application)
