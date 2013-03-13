@@ -110,8 +110,6 @@ def parse_file(filename, results):
     
     graph_type = '%s_%s_%s' % (rule, flavor, opts)
   
-    print topo, nodes, flavor, opts
-  
     hosts = nodes_to_hosts(nodes, topo)
 
     while 0 != lines[n].find('total') and n < len(lines):
@@ -176,7 +174,7 @@ if args.type == 'ops':
         X = A['x']
         Y = A['y']
     
-        if len(X) < 2:
+        if len(X) < 3:
           print "Skipping %s %s, #=%d" % (graph_type, topo, len(X))
           continue
             
@@ -227,14 +225,14 @@ if args.type == 'time':
       X = A['x']
       Y = A['y']
       
-      if len(X) < 2:
+      if len(X) < 3:
         print "Skipping %s %s, #=%d" % (graph_type, topo, len(X))
         continue
       
       else:
         has_plot = True
         print "Plotting %s %s, #=%d" % (graph_type, topo, len(X))
-      
+    
     
       fit = polyfit(X,Y,2)
       fit_fn = poly1d(fit) # fit_fn is now a function which takes in x and returns an estimate for y
@@ -280,14 +278,14 @@ if args.type == 'ops_per_time':
       X = A['x']
       Y = A['y']
       
-      if len(X) < 2:
+      if len(X) < 3:
         print "Skipping %s %s, #=%d" % (graph_type, topo, len(X))
         continue
       
       else:
         has_plot = True
         print "Plotting %s %s, #=%d" % (graph_type, topo, len(X))
-      
+    
       
       fit = polyfit(X,Y,1)
       print "fit = ", fit
@@ -319,12 +317,6 @@ if args.type == 'table':
   print "Writing to %s" % fname
   f = open(fname, 'w')
   
-  # Do another table with time?
-  
-  # Plot amount of time
-  
-#  for gopts in ['none','subspace']:
-    
   result_table = []
         
   for graph_type, topologies in results.items():
