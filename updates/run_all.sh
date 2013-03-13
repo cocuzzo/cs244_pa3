@@ -42,9 +42,9 @@ for nodes in $(echo $range) ; do
     dir=$rootdir/n$nodes/
     mkdir -vp $dir
 
-    #for topo in fattree waxman smallworld fattree_multicast \
-    #            waxman_multicast smallworld_multicast ; do
-    for topo in fattree waxman smallworld ; do 
+    for topo in fattree waxman smallworld
+#                fattree_multicast waxman_multicast smallworld_multicast
+      do
         for flavor in 1 2 3; do
 
             [ "$topo" = "fattree" ] && let "switches=$nodes/6"

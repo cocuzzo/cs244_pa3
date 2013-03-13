@@ -139,8 +139,7 @@ def parse_file(filename, results):
     results[graph_type][topo].append((hosts, total, overhead, time))
 
 results = {}
-for f in glob.glob("%s/*/*.txt" % args.dir) + \
-         glob.glob("%s/*.txt" % RESULTS_DIR):
+for f in glob.glob("%s/*/*.txt" % args.dir):
   print "Parsing %s" % f
   parse_file(f, results)
            

@@ -20,15 +20,26 @@ This work is part of [CS244 Advanced Topics in Networking](http://www.stanford.e
 
 1. Sign up for Amazon EC2
 
-2. Create a new instance of the AMI on region US – West (Oregon) with ID `ami-ec1782dc`. We recommend using a c1.medium or c1.xlarge instance for better performance.
+2. Create a new instance of the AMI on region US – West (Oregon) with ID `ami-ec1782dc`. We recommend using a c1.xlarge instance for better performance.
 
 3. SSH into this AMI using the `-A` option to enable forwarding of the authentication agent connection. This will allow you to clone our Github repository from your instance. Optionally, use the `-X` option for X-Window forwarding to view the output plots.
 
-4. In the home directory, run: `git clone git://github.com/cocushio/cs244_pa3.git`
+4. In the home directory, run: 
 
-5. Navigate into `cs244_pa3/updates` and run: `sudo ./run_all.sh`
+		git clone git://github.com/cocushio/cs244_pa3.git
+
+5. Navigate into `cs244_pa3/updates`.
+
+6. Run:
+
+		sudo ./run_all.sh
+		
+This should take 20 minutes to run with the default settings.  For a faster run, run with 1 or 2 flavors (Line 48).  To enable multicast (an additional 15-20 minutes), uncomment the line in the run_all.sh script (Line 46).
 
 6. Examine the generated HTML tables and PNG images for the results. They are located in the generated `latency-<timestamp>-<experiment>` subdirectories.
+
+Note: To enable multicast (an additional 15-20 minutes), uncomment the line in the run_all.sh script (Line 46).
+
 
 ###Additional Notes 
 When troubleshooting, make sure to kill any rogue processes using the following commands:
