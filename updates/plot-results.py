@@ -62,6 +62,8 @@ def flavor_name(flavor):
 # Convert the number of switches to hosts
 def nodes_to_hosts(nodes, topo):
 
+  if 'fattree_multicast' in topo:
+    return nodes * 4
   if 'fattree' in topo:
     return nodes * 6
   elif 'waxman' in topo or 'smallworld' in topo:
@@ -337,7 +339,6 @@ if args.type == 'table':
                    ('ops',int), ('overhead',int), ('time',float)])
 
   max_hosts = max(A['hosts'])
-  print "max_hosts =", max_hosts
   A = A[A['hosts'] == max_hosts]
 
   for tab_application in ['routing', 'multicast']:
@@ -372,6 +373,11 @@ if args.type == 'table':
                       (A['topology'] == topo) & \
                       (A['update'] == tab_update) & \
                       (A['opts'] == 'none'))][0]
+
+        vals_opt = A[((A['application'] == tab_application) & \
+                      (A['topology'] == topo) & \
+                      (A['update'] == tab_update) & \
+                      (A['opts'] == 'subspace'))][0]
 
         f.write('<tr>')
         f.write('<td>%s</td>' % tab_application)
