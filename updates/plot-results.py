@@ -5,13 +5,13 @@ import glob
 import os
 import sys
 from collections import defaultdict
-from pylab import *
 import argparse
 import numpy
 import matplotlib
 matplotlib.use('Agg')
 
 import matplotlib.pyplot as plt
+from pylab import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-o', '--out',

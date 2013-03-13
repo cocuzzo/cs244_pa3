@@ -23,16 +23,18 @@ rootdir=cupdates-results-$exptid
 
 mn -c
 
-EXPERIMENT=0
+EXPERIMENT=1
 # For experiment rode (can run quickly)
 if [ $EXPERIMENT -ne 0 ] ;
     then
     echo "Running in experiment mode."
-    range="24 36 48 60 72 84 96 108 120 132 144 156 168 180 192";
+    #range="24 36 48 60 72 84 96 108 120 132 144 156 168 180 192";
+    range="24 48 72 192";
 else
     # For Mininet rode (full setup)
     echo "Running in non-experiment mode."
-    range="24 36 48 60 72";
+    #range="24 36 48 60 72 84 96";
+    range="120 132 144 156 168 180";
 fi
 
 for nodes in $(echo $range) ; do
@@ -40,12 +42,10 @@ for nodes in $(echo $range) ; do
     dir=$rootdir/n$nodes/
     mkdir -vp $dir
 
-    for topo in fattree waxman smallworld fattree_multicast ; do
-
-#    for topo in fattree waxman smallworld fattree_multicast \
-#                waxman_multicast smallworld_multicast ; do
-#        for flavor in 1 2 3; do
-        for flavor in 1 2 3 ; do
+    #for topo in fattree waxman smallworld fattree_multicast \
+    #            waxman_multicast smallworld_multicast ; do
+    for topo in fattree waxman smallworld ; do 
+        for flavor in 1 2 3; do
 
             [ "$topo" = "fattree" ] && let "switches=$nodes/6"
             [ "$topo" = "waxman" ] && let "switches=$nodes/4" 
@@ -69,5 +69,8 @@ for nodes in $(echo $range) ; do
         echo "Started at" $start
         echo "Ended at" `date`
     done
+    python plot-results.py --dir $rootdir -o $rootdir --type ops
+    python plot-results.py --dir $rootdir -o $rootdir --type time
+    python plot-results.py --dir $rootdir -o $rootdir --type ops_per_time
+    python plot-results.py --dir $rootdir -o $rootdir --type table
 done
-#python plot-results.py --dir $rootdir -o $rootdir/result-$run.png
