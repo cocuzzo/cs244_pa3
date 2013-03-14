@@ -28,6 +28,10 @@ parser.add_argument('--type',
                     help="Type of plot (ops or time).",
                     required=True)
 
+parser.add_argument('-v', '--verbose',
+                    help="Type of plot (ops or time).",
+		    action='store_true',
+		    default=None)
 
 RESULTS_DIR = 'results'
 args = parser.parse_args()
@@ -138,6 +142,9 @@ def parse_file(filename, results):
     if topo not in results[graph_type]:
       results[graph_type][topo] = []
 
+    if args.verbose:
+	print "Adding graph_type=%s, topo=%s, %d %d %d %d" \
+		% (graph_type, topo, hosts, total, overhead, time)
     results[graph_type][topo].append((hosts, total, overhead, time))
 
 results = {}
@@ -364,25 +371,30 @@ if args.type == 'table':
 
       for tab_update in ['Hosts', 'Routes', 'Both']:
 
+        if tab_application == 'multicast':
+          topo_str = '%s_%s' % (tab_topo, tab_application)
+        else:
+          topo_str = tab_topo
+
 	# Check if at least one point
 	if len(A[(A['application'] == tab_application) & \
-                      (A['topology'] == topo) & \
+                      (A['topology'] == topo_str) & \
                       (A['update'] == tab_update) & \
                       (A['opts'] == 'none')]) < 1:
+	  print "Skipping %s %s %s none, insufficient results" % \
+		 (tab_application, topo, tab_update)
 	  continue
+	else:
+           print "Plotting %s %s %s none" % \
+		 (tab_application, topo, tab_update)
 
-        if tab_application == 'multicast':
-          topo = '%s_%s' % (tab_topo, tab_application)
-        else:
-          topo = tab_topo
-      
         vals_2pc = A[((A['application'] == tab_application) & \
-                      (A['topology'] == topo) & \
+                      (A['topology'] == topo_str) & \
                       (A['update'] == tab_update) & \
                       (A['opts'] == 'none'))][0]
 
         vals_opt = A[((A['application'] == tab_application) & \
-                      (A['topology'] == topo) & \
+                      (A['topology'] == topo_str) & \
                       (A['update'] == tab_update) & \
                       (A['opts'] == 'subspace'))][0]
 
