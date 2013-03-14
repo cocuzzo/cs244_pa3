@@ -28,8 +28,7 @@ EXPERIMENT=1
 if [ $EXPERIMENT -ne 0 ] ;
     then
     echo "Running in experiment mode."
-    #range="24 36 48 60 72 84 96 108 120 132 144 156 168 180 192";
-    range="24 48 96 192";
+    range="24 36 48 60 72 84 96 108 120 132 144 156 168 180 192";
 else
     # For Mininet rode (full setup)
     echo "Running in non-experiment mode."
