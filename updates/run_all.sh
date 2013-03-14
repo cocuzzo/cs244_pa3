@@ -32,8 +32,7 @@ if [ $EXPERIMENT -ne 0 ] ;
 else
     # For Mininet rode (full setup)
     echo "Running in non-experiment mode."
-    #range="24 36 48 60 72 84 96";
-    range="120 132 144 156 168 180";
+    range="24 36 48 60 72 84 96";
 fi
 
 for nodes in $(echo $range) ; do
