@@ -37,13 +37,10 @@ This work is part of [CS244 Advanced Topics in Networking](http://www.stanford.e
 7. To reproduce the plots run:
 
 		sudo ./run_all.sh
-		
-This should take 20 minutes to run with the default settings.  For a faster run, run with 1 or 2 flavors (Line 48).  To enable multicast (an additional 15-20 minutes), uncomment the line in the run_all.sh script (Line 46).
 
 6. Examine the generated HTML tables and PNG images for the results. They are located in the generated `latency-<timestamp>-<experiment>` subdirectories.
 
-Note: To enable multicast (an additional 15-20 minutes), uncomment the line in the run_all.sh script (Line 46).
-
+**Note**: This should take ~45 minutes to run with the default settings. As configured, `run_all.sh` only executes host join/leave scenarios. To examine other flavors (routes, both), uncomment line 50 in `run_all.sh`. To enable multicast experiments (an additional 45 minutes), uncomment the line 45 in `run_all.sh`.
 
 ###Additional Notes 
 When troubleshooting, make sure to kill any rogue processes using the following commands:
