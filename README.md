@@ -40,11 +40,11 @@ This work is part of [CS244 Advanced Topics in Networking](http://www.stanford.e
 		
 	This should take 20 minutes to run with the default settings. For a faster run, run with 1 or 2 flavors (Line 48).
 
-8. To reprodude the timing plots (Figures 2 and 3 in the blog, update the disable experiment mode by setting Line 26 of `updates/run_all.sh` to EXPERIMENT=0. Then, run:
+8. To reprodude the timing plots (Figures 2 and 3 in the blog), update the disable experiment mode by setting Line 26 of `updates/run_all.sh` to EXPERIMENT=0. Then, run:
 
 		sudo ./run_all.sh
 
-This step will take around 60 minutes to run.
+	This step will take around 60 minutes to run.
 
 Examine the generated HTML tables and PNG images for the results. They are located in the generated `latency-<timestamp>-<experiment>` subdirectories.
 
