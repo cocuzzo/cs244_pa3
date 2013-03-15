@@ -38,7 +38,7 @@ This work is part of [CS244 Advanced Topics in Networking](http://www.stanford.e
 
 		sudo ./run_all.sh
 		
-This should take 20 minutes to run with the default settings. For a faster run, run with 1 or 2 flavors (Line 48).
+	This should take 20 minutes to run with the default settings. For a faster run, run with 1 or 2 flavors (Line 48).
 
 8. To reprodude the timing plots (Figures 2 and 3 in the blog, update the disable experiment mode by setting Line 26 of `updates/run_all.sh` to EXPERIMENT=0. Then, run:
 
