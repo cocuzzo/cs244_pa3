@@ -34,17 +34,19 @@ This work is part of [CS244 Advanced Topics in Networking](http://www.stanford.e
 
 		sudo ./run_single.sh
 
-7. To reproduce the number of operations and obtain an approximate time plot run:
+7. To reproduce a plot with the number of operations run:
 
 		sudo ./run_all.sh
 		
-This should take 20 minutes to run with the default settings.  For a faster run, run with 1 or 2 flavors (Line 48).  To enable multicast (an additional 15-20 minutes), uncomment the line in the run_all.sh script (Line 46). For Mininet timing and ops per second plots, disable experiment mode by setting Line 26 of `updates/run_all.sh`  EXPERIMENT=0.  Then, run:
+This should take 20 minutes to run with the default settings. For a faster run, run with 1 or 2 flavors (Line 48).
+
+8. To reprodude the timing plots (Figures 2 and 3 in the blog, update the disable experiment mode by setting Line 26 of `updates/run_all.sh` to EXPERIMENT=0. Then, run:
 
 		sudo ./run_all.sh
 
-This step will take around 45 minutes to run.
+This step will take around 60 minutes to run.
 
-9. Examine the generated HTML tables and PNG images for the results. They are located in the generated `latency-<timestamp>-<experiment>` subdirectories.
+Examine the generated HTML tables and PNG images for the results. They are located in the generated `latency-<timestamp>-<experiment>` subdirectories.
 
 Note: To enable multicast (an additional 15-20 minutes), uncomment the line in the run_all.sh script (Line 46).
 
